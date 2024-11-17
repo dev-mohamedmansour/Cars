@@ -1,0 +1,90 @@
+:root {
+    --purple: #ffffff;
+    --red: #c0392b;
+    --orange: #f39c12;
+    --black: #333;
+    --white: #fff;
+    --light-color: #666;
+    --light-white: #ccc;
+    --light-bg: #f5f5f5;
+    --border: .1rem solid var(--black);
+    --box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .1);
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 20px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: purple;
+    border-radius: 20rem;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: rgb(184, 41, 184);
+}
+
+.users {
+    margin-top: 114px;
+    margin-bottom: 114px;
+}
+
+.users .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 40px;
+    margin-top: 81px;
+}
+
+.users h1 {
+    text-align: center;
+}
+
+.users .container .box {
+    border-radius: 24px;
+    text-align: center;
+    height: auto;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    width: auto;
+    line-break: anywhere;
+    overflow: hidden;
+    padding: 0px 20px 20px 20px;
+}
+
+.users .container .box p {
+    padding: 13px 0;
+
+}
+
+.users .container .box p:nth-child(1) {
+    margin-top: 10px;
+}
+
+.users .container .box p:nth-child(4) {
+    margin-bottom: 18px;
+}
+
+.users .container .box p span {
+    color: var(--purple);
+}
+
+.users .container .box a {
+    border-radius: 21px;
+    width: 254px;
+    padding: 8px 13px;
+    background-color: #c0392b;
+    color: white;
+}
+
+.users .container .box a:hover {
+    background-color: var(--black);
+}

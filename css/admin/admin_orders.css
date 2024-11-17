@@ -1,0 +1,192 @@
+/* Start Global Rules */
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+/* Start Variables */
+:root {
+    --purple: #ffffff;
+    --red: #c0392b;
+    --orange: #f39c12;
+    --black: #333;
+    --white: #fff;
+    --light-color: #666;
+    --light-white: #ccc;
+    --light-bg: #f5f5f5;
+    --border: 0.1rem solid var(--black);
+    --box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+}
+
+/* End Variables */
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    text-transform: capitalize;
+    font-family: "Cairo", sans-serif;
+    background-color: var(--light-bg);
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 20px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: purple;
+    border-radius: 20rem;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: rgb(184, 41, 184);
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Small */
+@media (min-width: 768px) {
+    .container {
+        width: 750px;
+    }
+}
+
+/* Medium */
+@media (min-width: 992px) {
+    .container {
+        width: 970px;
+    }
+}
+
+/* Large */
+@media (min-width: 1200px) {
+    .container {
+        width: 1170px;
+    }
+}
+
+/* End Global Rules */
+.orders {
+    margin-top: 63px;
+}
+
+.orders h1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 50px;
+}
+
+.orders .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 40px;
+}
+
+.orders .container .box {
+    border-radius: 20px;
+    padding: 36px 0;
+    padding-left: 18px;
+    background-color: white;
+    box-shadow: rgb(0 0 0 / 35%) 0px 5px 15px;
+    line-break: auto;
+    overflow: hidden;
+    font-size: 18px;
+}
+
+.orders .container .box p {
+    margin-bottom: 22px;
+}
+
+.orders .container .box p span {
+    color: var(--purple);
+}
+
+.orders .container form {
+    text-align: center;
+}
+
+.orders .container form select {
+    display: block;
+    margin: auto;
+    width: 84%;
+    height: 44px;
+    border-radius: 10px;
+    background-color: #eee;
+    margin-bottom: 30px;
+}
+
+.orders .container form input[value="Update"] {
+    width: 35%;
+    height: 44px;
+    border-radius: 10px;
+    background-color: var(--orange);
+    color: white;
+    border: none;
+    margin-right: 13px;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.orders .container form input[value="Update"]:hover {
+    background-color: var(--black);
+}
+
+.orders .container form a {
+    border-radius: 10px;
+    padding: 12px 33px;
+    background-color: var(--red);
+    color: white;
+    border: none;
+    font-size: 18px;
+}
+
+.orders .container form a {
+    border-radius: 10px;
+    padding: 12px 33px;
+    background-color: var(--red);
+    color: white;
+    border: none;
+    font-size: 18px;
+    margin-right: 21px;
+}
+
+.orders .container form a:hover {
+    background-color: var(--black);
+
+}
+
+.empty {
+    border: 2px solid;
+    width: 205px;
+    height: 55px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
