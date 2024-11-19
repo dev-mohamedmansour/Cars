@@ -6,11 +6,12 @@
 	  require_once __DIR__ . "/../../vendor/autoload.php";
 	  
 	  
-	  $dbAction = new DB;
-	  $userDetails = new UserInter;
+	  $dbAction = new DB();
+	  $userDetails = new UserInter();
 	  @session_start();
 	  //Logic of orders
 	  if (isset($_POST['order'])) {
+		  
 			 $categoryCarDetails = [
 				  "type"  => $_POST['type'],
 				  "cc"    => $_POST['cc'],
