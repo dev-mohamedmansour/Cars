@@ -47,6 +47,7 @@
   <component name="NamedScopeManager">
     <scope name="mansStyle" pattern="" />
   </component>
+  <component name="PhpDebugGeneral" listening_started="true" />
   <component name="PhpExternalFormatterCheckinHandler">
     <option name="shouldReformat" value="true" />
   </component>
@@ -81,36 +82,47 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.laravel-idea.search-composer-json&quot;: &quot;true&quot;,
-    &quot;ShowUsagesActions.previewPropertyKey&quot;: &quot;true&quot;,
-    &quot;full.screen.before.presentation.mode&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/xampp/htdocs/projects/cars&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;com.obiscr.chatgpt.settings.EasyCodeSettings&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "PHP Script.loginLogic.php.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.laravel-idea.search-composer-json": "true",
+    "ShowUsagesActions.previewPropertyKey": "true",
+    "full.screen.before.presentation.mode": "false",
+    "git-widget-placeholder": "master",
+    "last_opened_file_path": "C:/xampp/htdocs/projects/cars",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "com.obiscr.chatgpt.settings.EasyCodeSettings",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;ChangesTree.GroupingKeys&quot;: [
-      &quot;directory&quot;
+  "keyToStringList": {
+    "ChangesTree.GroupingKeys": [
+      "directory"
     ],
-    &quot;GitStage.ChangesTree.GroupingKeys&quot;: [
-      &quot;directory&quot;,
-      &quot;repository&quot;
+    "GitStage.ChangesTree.GroupingKeys": [
+      "directory",
+      "repository"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\xampp\htdocs\projects\cars\Logic\Constract" />
     </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="loginLogic.php" type="PhpLocalRunConfigurationType" factoryName="PHP Console" temporary="true" path="$PROJECT_DIR$/Logic/userLogic/loginLogic.php">
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="PHP Script.loginLogic.php" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -150,7 +162,16 @@
       <workItem from="1731880404520" duration="1659000" />
       <workItem from="1731882109749" duration="3095000" />
       <workItem from="1731886616618" duration="8921000" />
-      <workItem from="1731967671673" duration="1363000" />
+      <workItem from="1731967671673" duration="3045000" />
+      <workItem from="1732019288686" duration="114000" />
+      <workItem from="1732019431881" duration="34415000" />
+      <workItem from="1732289800107" duration="7225000" />
+      <workItem from="1732351521986" duration="115000" />
+      <workItem from="1732352790378" duration="654000" />
+      <workItem from="1732524056738" duration="1783000" />
+      <workItem from="1732598534997" duration="559000" />
+      <workItem from="1732599122761" duration="40000" />
+      <workItem from="1732600991009" duration="723000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <option name="closed" value="true" />
@@ -168,7 +189,23 @@
       <option name="project" value="LOCAL" />
       <updated>1731876458907</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Edite in Authorization Logic to added a validate email function and prent error when email Domain does not exist">
+      <option name="closed" value="true" />
+      <created>1732018877493</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1732018877493</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Edite in Authorization Logic to added a validate email function and prent error when email Domain does not exist">
+      <option name="closed" value="true" />
+      <created>1732018926836</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1732018926836</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -189,9 +226,8 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
-    <option name="CODE_SMELLS_PROFILE" value="Default" />
-    <option name="CHECK_CODE_CLEANUP_BEFORE_PROJECT_COMMIT_PROFILE" value="Default" />
+    <option name="CODE_SMELLS_PROFILE" value="Project Default" />
+    <option name="CHECK_CODE_CLEANUP_BEFORE_PROJECT_COMMIT_PROFILE" value="Project Default" />
     <option name="CHECK_CODE_CLEANUP_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="CHECK_NEW_TODO" value="false" />
     <ignored-roots>
@@ -199,7 +235,8 @@
     </ignored-roots>
     <MESSAGE value="first commit in project" />
     <MESSAGE value="first commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="first commit" />
+    <MESSAGE value="Edite in Authorization Logic to added a validate email function and prent error when email Domain does not exist" />
+    <option name="LAST_COMMIT_MESSAGE" value="Edite in Authorization Logic to added a validate email function and prent error when email Domain does not exist" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">

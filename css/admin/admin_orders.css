@@ -108,11 +108,24 @@ ul {
     gap: 40px;
 }
 
+.orders1 .container1 .box1 {
+    font-size: 20px;
+    font-style: oblique;
+    border-radius: 40px;
+    padding: 36px 0;
+    padding-left: 18px;
+    background-color: #ff0808;
+    box-shadow: rgb(0 0 0 / 35%) 1px 6px 15px;
+    line-break: auto;
+    overflow: hidden;
+    font-family: cursive;
+}
+
 .orders .container .box {
     border-radius: 20px;
     padding: 36px 0;
     padding-left: 18px;
-    background-color: white;
+    background-color: #0194df;
     box-shadow: rgb(0 0 0 / 35%) 0px 5px 15px;
     line-break: auto;
     overflow: hidden;

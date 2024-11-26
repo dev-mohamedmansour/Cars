@@ -86,7 +86,7 @@
 					   </div>
 					   <div class="row row2">
 							<div class="col-lg-12">
-													 <?php @include 'Logic/userLogic/loginLogic.php' ?>
+													 <?php include 'Logic/userLogic/loginLogic.php' ?>
 								  <form name="sentMessage"
 									   id="contactForm" novalidate=""
 									   method="post"
@@ -263,7 +263,7 @@
 	  <!-- Copyright -->
 	  <div class="text-center p-4"
 		  style="background-color: rgba(0, 0, 0, 0.05);">
-		    © 2024 Copyright:
+		    © 2024 Copyright: Mohamed Mansour
 		    <a class="text-reset fw-bold" href=""></a>
 	  </div>
 	  <!-- Copyright -->

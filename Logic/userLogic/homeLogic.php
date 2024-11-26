@@ -8,7 +8,6 @@
 	  $dbAction = new DB;
 	  $carType = new CARS;
 	  /** @noinspection ALL */
-	  @session_start();
 	  
 	  // logic of contact_us
 	  if (isset($_POST['send_message'])) {
