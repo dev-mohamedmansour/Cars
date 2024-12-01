@@ -104,14 +104,14 @@
                 </div>
                 <div class = "row row2">
                     <div class = "col-lg-12">
-					 <?php
-						  @include 'Logic/userLogic/loginLogic.php' ?>
+								  <?php
+										  @include 'Logic/userLogic/loginLogic.php' ?>
                         <form
-                              id = "contactForm"
-                              novalidate = ""
-                              method = "post"
-                              action = ""
-                              enctype = "multipart/form-data">
+                                id = "contactForm"
+                                novalidate = ""
+                                method = "post"
+                                action = ""
+                                enctype = "multipart/form-data">
                             <div class = "row row2">
 
                                 <div class = "col-md-6">
@@ -144,8 +144,9 @@
                                                minlength = "11"
                                         <p class = "help-block text-danger"></p>
                                     </div>
-                                    <div class="form-control">
-                                        <?php echo "";?>
+                                    <div class = "form-control">
+														<?php
+																echo ""; ?>
                                     </div>
                                     <div class = "form-group">
                                         <input type = "password"

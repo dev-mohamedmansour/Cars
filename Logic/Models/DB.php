@@ -2,7 +2,7 @@
 	 
 	 namespace Cars\Models;
 	 
-	 //	  require_once __DIR__ . "/../../vendor/autoload.php";
+//	 	  require_once __DIR__ . "/../../vendor/autoload.php";
 	 
 	 
 	 class DB
@@ -14,7 +14,7 @@
 		  public function __construct()
 		  {
 			   $this->connection = mysqli_connect(
-				    'localhost', 'root', '', 'classic_cars'
+				    'localhost', 'MohamedMansour', 'MANS362003@@#', 'classic_cars'
 			   );
 		  }
 		  
