@@ -3,7 +3,6 @@
 	  namespace Cars\Models;
 	  
 	  global $dbAction;
-	  /** @noinspection ALL */
 	  @session_start();
 	  
 	  class UserInter
@@ -11,6 +10,17 @@
 			 
 			 public $selectOrders;
 			 
+			 /**
+			  * Retrieves a list of orders for the current user.
+			  *
+			  * This function queries the database to fetch order details
+			  * associated with the user currently logged in, identified by
+			  * the session's clientId.
+			  *
+			  * @return array An array of orders, each containing details such as
+			  *               the user's name, email, order ID, car name, order date,
+			  *               city, payment method, total price, and order status.
+			  */
 			 public function getOrders(): array
 			 {
 					global $dbAction;
@@ -18,14 +28,14 @@
 					
 					$this->selectOrders = $dbAction->select(
 						 "users.name AS Name,
-    								users.email AS Email,
-    								orders.id AS Order_id,
-    								orders.details AS Name_of_car,
-    								orders.date AS Data_of_order,
-    								cities.city_name AS City,
-    								orders.method AS Method_of_pay,
-    								orders.total_price AS Total_price,
-    								orders.payment_status AS Order_status",
+                                 users.email AS Email,
+                                 orders.id AS Order_id,
+                                 orders.details AS Name_of_car,
+                                 orders.date AS Data_of_order,
+                                 cities.city_name AS City,
+                                 orders.method AS Method_of_pay,
+                                 orders.total_price AS Total_price,
+                                 orders.payment_status AS Order_status",
 						 "orders"
 					)->innerJoin("cities", "orders.city_id", "cities.id")
 						 ->rightJoin(
@@ -37,7 +47,20 @@
 					return $this->selectOrders;
 			 }
 			 
-			 public function checkGovernorate($governorate, $city): string
+			 /**
+			  * Checks if the provided governorate and city are valid.
+			  *
+			  * This function verifies the existence of a governorate and city
+			  * combination in the database. If the combination is valid, it returns
+			  * the city ID. Otherwise, it redirects to the sign-up page and returns
+			  * an error message.
+			  *
+			  * @param string $governorate The name of the governorate to check.
+			  * @param string $city        The name of the city to check.
+			  *
+			  * @return string The city ID if valid, or an error message if not.
+			  */
+			 public function checkGovernorateAndCity(string $governorate, string $city): string
 			 {
 					global $dbAction;
 					$governorate = $_POST['Governorate'];
@@ -55,14 +78,14 @@
 											"governorate_id", "=", "$idGovernorate"
 									  )->getRow();
 								 if (isset($selectCity)) {
-										return $idCity = $selectCity['id'];
+										return $selectCity['id'];
 										
 								 } else {
 										header('location:sign_up.php');
 										return "this city not selected";
 										
 								 }
-						  } else{
+						  } else {
 								 header('location:sign_up.php');
 								 return "this not governorate";
 						  }
