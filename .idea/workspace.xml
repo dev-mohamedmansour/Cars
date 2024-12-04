@@ -37,53 +37,21 @@
   <component name="Git.Stage.Ui.Settings">
     <option name="ignoredFilesShown" value="true" />
   </component>
-  <component name="GitHubPullRequestSearchHistory">{
-  &quot;lastFilter&quot;: {
-    &quot;state&quot;: &quot;OPEN&quot;,
-    &quot;assignee&quot;: &quot;dev-mohamedmansour&quot;
-  }
-}</component>
   <component name="GithubDefaultAccount">
     <option name="defaultAccountId" value="38fb5828-1fb7-4b29-9b63-215b8cb0ad19" />
-  </component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/dev-mohamedmansour/Cars.git&quot;,
-    &quot;accountId&quot;: &quot;38fb5828-1fb7-4b29-9b63-215b8cb0ad19&quot;
-  }
-}</component>
-  <component name="GitlabMajeraCodeReviewSettings">
-    <option name="popularEmojiShortcuts">
-      <list />
-    </option>
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Logic/Models/UserInter.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/vendor/composer/autoload_psr4.php" root0="FORCE_HIGHLIGHTING" root1="SKIP_INSPECTION" />
   </component>
-  <component name="LaravelPintProjectConfiguration">
-    <option name="selectedConfigurationId" value="79408c37-cc11-4fed-9e32-1625a19e2672" />
-  </component>
-  <component name="MessDetectorProjectConfiguration">
-    <option name="selectedConfigurationId" value="79408c37-cc11-4fed-9e32-1625a19e2672" />
-  </component>
   <component name="NamedScopeManager">
     <scope name="mansStyle" pattern="" />
-  </component>
-  <component name="PHPCSFixerProjectConfiguration">
-    <option name="selectedConfigurationId" value="79408c37-cc11-4fed-9e32-1625a19e2672" />
-  </component>
-  <component name="PHPCodeSnifferProjectConfiguration">
-    <option name="selectedConfigurationId" value="79408c37-cc11-4fed-9e32-1625a19e2672" />
   </component>
   <component name="PhpDebugGeneral" listening_started="true" />
   <component name="PhpExternalFormatterCheckinHandler">
     <option name="shouldReformat" value="true" />
   </component>
-  <component name="PhpStanProjectConfiguration">
-    <option name="selectedConfigurationId" value="79408c37-cc11-4fed-9e32-1625a19e2672" />
-  </component>
-  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="C:\php-8.4.1\php.exe">
+  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="C:\xampp\php\php.exe">
     <include_path>
       <path value="$PROJECT_DIR$/vendor/composer" />
       <path value="$PROJECT_DIR$/vendor/symfony/polyfill-ctype" />
@@ -102,9 +70,6 @@
       <path value="$PROJECT_DIR$/vendor/nikic/php-parser" />
     </include_path>
   </component>
-  <component name="ProblemsViewState">
-    <option name="selectedTabId" value="CurrentFile" />
-  </component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
   &quot;associatedIndex&quot;: 7
@@ -117,38 +82,33 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;PHP Script.loginLogic.php.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.laravel-idea.search-composer-json&quot;: &quot;true&quot;,
-    &quot;ShowUsagesActions.previewPropertyKey&quot;: &quot;true&quot;,
-    &quot;full.screen.before.presentation.mode&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/PHP_Annotations-11.1.1.zip&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;run.code.analysis.last.selected.profile&quot;: &quot;aDefault&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;settings.sync&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "PHP Script.loginLogic.php.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.laravel-idea.search-composer-json": "true",
+    "ShowUsagesActions.previewPropertyKey": "true",
+    "full.screen.before.presentation.mode": "false",
+    "git-widget-placeholder": "master",
+    "last_opened_file_path": "C:/xampp/htdocs/projects/cars",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "com.obiscr.chatgpt.settings.EasyCodeSettings",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;ChangesTree.GroupingKeys&quot;: [
-      &quot;directory&quot;
+  "keyToStringList": {
+    "ChangesTree.GroupingKeys": [
+      "directory"
     ],
-    &quot;GitStage.ChangesTree.GroupingKeys&quot;: [
-      &quot;directory&quot;,
-      &quot;repository&quot;
+    "GitStage.ChangesTree.GroupingKeys": [
+      "directory",
+      "repository"
     ]
   }
-}</component>
-  <component name="PsalmProjectConfiguration">
-    <option name="selectedConfigurationId" value="79408c37-cc11-4fed-9e32-1625a19e2672" />
-  </component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\xampp\htdocs\projects\cars\Logic\Constract" />
@@ -167,12 +127,12 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-php-predefined-a98d8de5180a-5fbe0c30323e-com.jetbrains.php.sharedIndexes-PS-243.21565.202" />
-        <option value="php-nikic_php_parser-5543a6ebd44f-b657ee4f" />
-        <option value="php-symfony_console-5543a6ebd44f-5a7aa3a6" />
-        <option value="php-symfony_filesystem-5543a6ebd44f-89ec7074" />
-        <option value="php-symfony_finder-5543a6ebd44f-128c6d77" />
-        <option value="php-symfony_string-5543a6ebd44f-ba92a5af" />
+        <option value="bundled-js-predefined-1d06a55b98c1-91d5c284f522-JavaScript-PS-241.15989.102" />
+        <option value="bundled-php-predefined-ba97393d7c68-c76157a7178b-com.jetbrains.php.sharedIndexes-PS-241.15989.102" />
+        <option value="php-nikic_php_parser-37cbfb0ca1b6-0c3f2cc7" />
+        <option value="php-symfony_console-37cbfb0ca1b6-41c774ef" />
+        <option value="php-symfony_filesystem-37cbfb0ca1b6-525f7c52" />
+        <option value="php-symfony_finder-37cbfb0ca1b6-18267425" />
       </set>
     </attachedChunks>
   </component>
@@ -211,26 +171,7 @@
       <workItem from="1732524056738" duration="1783000" />
       <workItem from="1732598534997" duration="559000" />
       <workItem from="1732599122761" duration="40000" />
-      <workItem from="1732600991009" duration="4562000" />
-      <workItem from="1732858182111" duration="1552000" />
-      <workItem from="1732878721787" duration="128000" />
-      <workItem from="1732878877158" duration="710000" />
-      <workItem from="1732879619285" duration="1120000" />
-      <workItem from="1732884052404" duration="36000" />
-      <workItem from="1732916053962" duration="99000" />
-      <workItem from="1732916183240" duration="243000" />
-      <workItem from="1732916445126" duration="1986000" />
-      <workItem from="1732956862401" duration="151000" />
-      <workItem from="1732957040413" duration="411000" />
-      <workItem from="1732958125406" duration="1449000" />
-      <workItem from="1732962851654" duration="127000" />
-      <workItem from="1732963000291" duration="307000" />
-      <workItem from="1732963341170" duration="525000" />
-      <workItem from="1732963886945" duration="420000" />
-      <workItem from="1732964340521" duration="286000" />
-      <workItem from="1732964655566" duration="2333000" />
-      <workItem from="1732975725370" duration="6813000" />
-      <workItem from="1733046315219" duration="2695000" />
+      <workItem from="1732600991009" duration="723000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <option name="closed" value="true" />
@@ -264,15 +205,7 @@
       <option name="project" value="LOCAL" />
       <updated>1732018926836</updated>
     </task>
-    <task id="LOCAL-00005" summary="feat(website): add classic car listings and search functionality&#10;&#10;- Implemented a database schema to store classic car listings with fields such as make, model, year, price, and description.&#10;- Developed a user interface for displaying classic car listings with images and detailed information.&#10;- Added a search functionality allowing users to filter listings by make, model, year, and price range.&#10;- Integrated pagination to handle large numbers of listings efficiently.&#10;- Enhanced the UI with responsive design for optimal viewing on various devices.&#10;- Added unit tests to ensure the functionality and reliability of the search and listing features.&#10;&#10;This commit brings the core functionality of the classic car website to life, enabling users to browse and search for their dream classic cars.">
-      <option name="closed" value="true" />
-      <created>1732601768061</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1732601768061</updated>
-    </task>
-    <option name="localTasksCounter" value="6" />
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -286,19 +219,7 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State>
-              <option name="FILTERS">
-                <map>
-                  <entry key="branch">
-                    <value>
-                      <list>
-                        <option value="origin/master" />
-                      </list>
-                    </value>
-                  </entry>
-                </map>
-              </option>
-            </State>
+            <State />
           </value>
         </entry>
       </map>
@@ -315,8 +236,7 @@
     <MESSAGE value="first commit in project" />
     <MESSAGE value="first commit" />
     <MESSAGE value="Edite in Authorization Logic to added a validate email function and prent error when email Domain does not exist" />
-    <MESSAGE value="feat(website): add classic car listings and search functionality&#10;&#10;- Implemented a database schema to store classic car listings with fields such as make, model, year, price, and description.&#10;- Developed a user interface for displaying classic car listings with images and detailed information.&#10;- Added a search functionality allowing users to filter listings by make, model, year, and price range.&#10;- Integrated pagination to handle large numbers of listings efficiently.&#10;- Enhanced the UI with responsive design for optimal viewing on various devices.&#10;- Added unit tests to ensure the functionality and reliability of the search and listing features.&#10;&#10;This commit brings the core functionality of the classic car website to life, enabling users to browse and search for their dream classic cars." />
-    <option name="LAST_COMMIT_MESSAGE" value="feat(website): add classic car listings and search functionality&#10;&#10;- Implemented a database schema to store classic car listings with fields such as make, model, year, price, and description.&#10;- Developed a user interface for displaying classic car listings with images and detailed information.&#10;- Added a search functionality allowing users to filter listings by make, model, year, and price range.&#10;- Integrated pagination to handle large numbers of listings efficiently.&#10;- Enhanced the UI with responsive design for optimal viewing on various devices.&#10;- Added unit tests to ensure the functionality and reliability of the search and listing features.&#10;&#10;This commit brings the core functionality of the classic car website to life, enabling users to browse and search for their dream classic cars." />
+    <option name="LAST_COMMIT_MESSAGE" value="Edite in Authorization Logic to added a validate email function and prent error when email Domain does not exist" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
