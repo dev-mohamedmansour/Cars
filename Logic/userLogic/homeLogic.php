@@ -26,6 +26,7 @@
 	  }
 	  // logic order products
 	  if (isset($_POST['mercedes'])) {
+			 
 			 $carType->mercedes();
 			 
 	  } elseif (isset($_POST['volvo'])) {

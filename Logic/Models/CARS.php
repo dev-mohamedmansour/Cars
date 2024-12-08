@@ -2,24 +2,21 @@
 	  
 	  namespace Cars\Models;
 	  
-	  
-	  global $dbAction;
-	  
 	  use Cars\Constract\typeOfCars;
 	  
 	  @session_start();
 	  
 	  class CARS implements typeOfCars
 	  {
-			 public $data1;
-			 public $data2;
-			 public $model;
-			 public $verfyCar;
+			 public array $data1;
+			 public array $data2;
+			 public string $model;
+			 public array $verfyCar;
 			 
-			 public $item;
-			 public $orderItem;
-			 public $addOrder;
-			 public $selectOrders;
+			 public array $item;
+			 public array $orderItem;
+			 public string $addOrder;
+			 public array $selectOrders;
 			 
 			 /**
 			  * Retrieves car details and processes an order for a Mercedes car.
@@ -35,7 +32,6 @@
 			 {
 					global $dbAction;
 					$this->model = 'Mercedes';
-					
 					$this->verfyCar = $dbAction->select("*", "cars")->where(
 						 "name_car", "=", "$this->model"
 					)->getRow();
@@ -54,15 +50,14 @@
 						 "category_id" => $this->verfyCar['category_id'],
 					];
 					$this->data2 = [
-						 "city_id" => $_SESSION['userCityId'],
-                  "client_id"   => $_SESSION['clientId'],
-                  "car_id"      => $this->verfyCar['id'],
-                  "details"     => $_POST['mercedes'],
-                  "total_price" => $price['price'],
-            ];
-            
-            return $this->getCar($this->data2, $this->data1);
-        }
+						 "client_id"   => $_SESSION['clientId'],
+						 "car_id"      => $this->verfyCar['id'],
+						 "details"     => $_POST['mercedes'],
+						 "total_price" => $price['price'],
+					];
+					
+					return $this->getCar($this->data2, $this->data1);
+			 }
 			 
 			 /**
 			  * Retrieves car details, processes an order, and handles order-related operations.
@@ -71,47 +66,77 @@
 			  * and inserts a new order into the database if it doesn't. It then retrieves car and category details
 			  * and calls the handelOrder function to process the order.
 			  *
-			  * @param array   $data1    An array containing the category ID.
-			  * @param array   $data2    An array containing the client ID, car ID, order details, and total price.
+			  * @param mixed   $data1    An array containing the category ID.
+			  * @param mixed   $data2    An array containing the city_id, client ID, car ID, order details, and total price.
 			  *
 			  * @return array The result of the handelOrder function, which processes the order and returns the order details.
 			  * @global object $dbAction The database action object used for executing queries.
 			  */
-			 public function getCar($data1, $data2): array
+			 public function getCar(mixed $data1, mixed $data2): array
 			 {
+					
+					$userDetails = new  UserInter();
 					global $dbAction;
-					$cityRequest = $dbAction->select("city_id", "users")->where(
-						 "id", "=", $this->data2['client_id']
-					)->getRow();
-					$this->data2['city_id'] = $cityRequest['city_id'];
-					$this->orderItem
-						 = $dbAction->select("*", "orders")->where(
-						 "client_id", "=", $this->data2['clientId']
-					)->andWhere(
-						 "car_id", "=", $this->data2['car_id']
-					)->getRow();
 					
-					if ($this->orderItem > 0) {
-						  echo "<h1 style='color: #0dcaf0'>orderPages already exist!</h1>";
+					$filterGovernorate = strip_tags(
+						 $_POST['orderGovernorate']
+					);
+					
+					$governorateOrder = mysqli_real_escape_string(
+						 $dbAction->connection,
+						 $filterGovernorate
+					);
+					
+					$filterCity = strip_tags(
+						 $_POST['orderCity']
+					);
+					
+					$cityOrder = mysqli_real_escape_string(
+						 $dbAction->connection,
+						 $filterCity
+					);
+					
+					$checkCityGovernorate = $userDetails->checkGovernorateAndCity(
+						 "$governorateOrder", "$cityOrder"
+					);
+					
+					if ($checkCityGovernorate == "this city not selected"
+						 || $checkCityGovernorate == "this not governorate"
+					) {
+						  header('location:../orderPages/selectGovernorate.php');
+						  echo "<h2 style='color: red'> City or Governorate not selected. </h2>";
 					} else {
-						  $this->addOrder = $dbAction->insert(
-								"orders", $this->data2
-						  )->execution();
+						  $this->orderItem
+								= $dbAction->select("*", "orders")->where(
+								"client_id", "=", $this->data2['clientId']
+						  )->andWhere(
+								"car_id", "=", $this->data2['car_id']
+						  )->getRow();
 						  
-						  echo 'order send successfully!';
+						  if ($this->orderItem > 0) {
+								 echo "<h1 style='color: #0dcaf0'>orderPages already exist!</h1>";
+						  } else {
+								 $data2[] = $checkCityGovernorate;
+								 $this->addOrder = $dbAction->insert(
+									  "orders", $this->data2
+								 )->execution();
+								 
+								 echo 'order send successfully!';
+						  }
+						  
+						  $this->item
+								= $dbAction->select(
+								"cars.id, cars.name_car ,category_car.*", "cars"
+						  )->rightJoin(
+								"category_car", "cars.category_id", "category_car.id"
+						  )->groupBy(
+								"cars.category_id", "category_id",
+								$this->data1["category_id"]
+						  )->getRow();
+						  
+						  
+						  return $this->handelOrder($this->item);
 					}
-					
-					$this->item
-						 = $dbAction->select(
-						 "cars.id, cars.name_car ,category_car.*", "cars"
-					)->rightJoin(
-						 "category_car", "cars.category_id", "category_car.id"
-					)->groupBy(
-						 "cars.category_id", "category_id",
-						 $this->data1["category_id"]
-					)->getRow();
-					
-					
 					return $this->handelOrder($this->item);
 			 }
 			 
@@ -156,7 +181,6 @@
 						 "category_id" => $this->verfyCar['category_id'],
 					];
 					$this->data2 = [
-						 "city_id" => $_SESSION['userCityId'],
 						 "client_id" => $_SESSION['clientId'],
 						 "car_id"    => $this->verfyCar['id'],
 						 "details"   => $_POST['ferrari'],
@@ -187,7 +211,7 @@
 						 "category_id" => $this->verfyCar['category_id'],
 					];
 					$this->data2 = [
-						 "city_id" => $_SESSION['userCityId'],
+						 
 						 "client_id" => $_SESSION['clientId'],
 						 "car_id"    => $this->verfyCar['id'],
 						 "details"   => $_POST['porsche'],
@@ -218,7 +242,7 @@
 						 "category_id" => $this->verfyCar['category_id'],
 					];
 					$this->data2 = [
-						 "city_id" => $_SESSION['userCityId'],
+						 
 						 "client_id" => $_SESSION['clientId'],
 						 "car_id"    => $this->verfyCar['id'],
 						 "details"   => $_POST['jaguar'],
@@ -249,7 +273,7 @@
 						 "category_id" => $this->verfyCar['category_id'],
 					];
 					$this->data2 = [
-						 "city_id" => $_SESSION['userCityId'],
+						 
 						 "client_id" => $_SESSION['clientId'],
 						 "car_id"    => $this->verfyCar['id'],
 						 "details"   => $_POST['BMW'],
@@ -280,7 +304,7 @@
 						 "category_id" => $this->verfyCar['category_id'],
 					];
 					$this->data2 = [
-						 "city_id" => $_SESSION['userCityId'],
+						 
 						 "client_id" => $_SESSION['clientId'],
 						 "car_id"    => $this->verfyCar['id'],
 						 "details"   => $_POST['volvo'],

@@ -116,6 +116,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "PHP Script.UserInter.php.executor": "Run",
     "PHP Script.loginLogic.php.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
@@ -123,14 +124,14 @@
     "ShowUsagesActions.previewPropertyKey": "true",
     "full.screen.before.presentation.mode": "false",
     "git-widget-placeholder": "master",
-    "last_opened_file_path": "C:/PHP_Annotations-11.1.1.zip",
+    "last_opened_file_path": "C:/wamp64/www/projects/cars",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "run.code.analysis.last.selected.profile": "aDefault",
-    "settings.editor.selected.configurable": "aigit.settings",
+    "settings.editor.selected.configurable": "com.obiscr.chatgpt.settings.EasyCodeSettings",
     "vue.rearranger.settings.migration": "true"
   },
   "keyToStringList": {
@@ -151,12 +152,16 @@
       <recent name="C:\xampp\htdocs\projects\cars\Logic\Constract" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="PHP Script.UserInter.php">
+    <configuration name="UserInter.php" type="PhpLocalRunConfigurationType" factoryName="PHP Console" temporary="true" path="$PROJECT_DIR$/Logic/Models/UserInter.php">
+      <method v="2" />
+    </configuration>
     <configuration name="loginLogic.php" type="PhpLocalRunConfigurationType" factoryName="PHP Console" temporary="true" path="$PROJECT_DIR$/Logic/userLogic/loginLogic.php">
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="PHP Script.UserInter.php" />
         <item itemvalue="PHP Script.loginLogic.php" />
       </list>
     </recent_temporary>
@@ -228,7 +233,15 @@
       <workItem from="1732964655566" duration="2333000" />
       <workItem from="1732975725370" duration="6813000" />
       <workItem from="1733046315219" duration="2695000" />
-      <workItem from="1733293171535" duration="4008000" />
+      <workItem from="1733293171535" duration="7821000" />
+      <workItem from="1733476353842" duration="86000" />
+      <workItem from="1733476464475" duration="1463000" />
+      <workItem from="1733506266976" duration="115000" />
+      <workItem from="1733506496667" duration="2000" />
+      <workItem from="1733506813729" duration="200000" />
+      <workItem from="1733510589423" duration="1669000" />
+      <workItem from="1733514063438" duration="4285000" />
+      <workItem from="1733574738184" duration="7619000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <option name="closed" value="true" />
@@ -278,7 +291,15 @@
       <option name="project" value="LOCAL" />
       <updated>1733293575347</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="refactor(models): improve car order processing&#10;&#10;Improve the clarity and efficiency of car order processing in the models.&#10;&#10;* Add city_id to order data for better location tracking.&#10;* Refactor code for better readability and maintainability.&#10;* Add detailed function documentation.&#10;&#10;diff begin:  Improved order data structure and added city information.  Enhanced code clarity with comments and documentation. diff end.">
+      <option name="closed" value="true" />
+      <created>1733297740595</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1733297740595</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -320,7 +341,8 @@
     <MESSAGE value="feat(website): add classic car listings and search functionality&#10;&#10;- Implemented a database schema to store classic car listings with fields such as make, model, year, price, and description.&#10;- Developed a user interface for displaying classic car listings with images and detailed information.&#10;- Added a search functionality allowing users to filter listings by make, model, year, and price range.&#10;- Integrated pagination to handle large numbers of listings efficiently.&#10;- Enhanced the UI with responsive design for optimal viewing on various devices.&#10;- Added unit tests to ensure the functionality and reliability of the search and listing features.&#10;&#10;This commit brings the core functionality of the classic car website to life, enabling users to browse and search for their dream classic cars." />
     <MESSAGE value="feat(website): Add classic car listings and search (main)&#10;&#10;This commit introduces the core functionality for browsing&#10;and searching classic car listings on the website.&#10;&#10;- Added database schema for storing car listings with&#10;  make, model, year, price, and description.&#10;- Created UI for displaying car listings with images and&#10;  details.&#10;- Implemented search functionality to filter listings by&#10;  make, model, year, and price range.&#10;- Integrated pagination for efficient handling of large&#10;  numbers of listings.&#10;- Enhanced UI with responsive design for optimal viewing&#10;  on different devices.&#10;- Added unit tests for search and listing features.&#10;&#10;This change removes the `.idea/inspectionProfiles/`&#10;directory." />
     <MESSAGE value="feat(auth): improve login security&#10;&#10;Enhance login security by implementing password strength validation.&#10;&#10;* Add password complexity requirements.&#10;* Integrate a password strength meter for user feedback.&#10;* Display clear error messages for weak passwords.&#10;&#10;diff begin: Password validation rules added, UI updated to reflect changes.  diff end." />
-    <option name="LAST_COMMIT_MESSAGE" value="feat(auth): improve login security&#10;&#10;Enhance login security by implementing password strength validation.&#10;&#10;* Add password complexity requirements.&#10;* Integrate a password strength meter for user feedback.&#10;* Display clear error messages for weak passwords.&#10;&#10;diff begin: Password validation rules added, UI updated to reflect changes.  diff end." />
+    <MESSAGE value="refactor(models): improve car order processing&#10;&#10;Improve the clarity and efficiency of car order processing in the models.&#10;&#10;* Add city_id to order data for better location tracking.&#10;* Refactor code for better readability and maintainability.&#10;* Add detailed function documentation.&#10;&#10;diff begin:  Improved order data structure and added city information.  Enhanced code clarity with comments and documentation. diff end." />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor(models): improve car order processing&#10;&#10;Improve the clarity and efficiency of car order processing in the models.&#10;&#10;* Add city_id to order data for better location tracking.&#10;* Refactor code for better readability and maintainability.&#10;* Add detailed function documentation.&#10;&#10;diff begin:  Improved order data structure and added city information.  Enhanced code clarity with comments and documentation. diff end." />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">

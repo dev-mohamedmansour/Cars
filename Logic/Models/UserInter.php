@@ -2,13 +2,10 @@
 	  
 	  namespace Cars\Models;
 	  
-	  global $dbAction;
 	  @session_start();
-	  
 	  class UserInter
 	  {
-			 
-			 public $selectOrders;
+			 public array $selectOrders ;
 			 
 			 /**
 			  * Retrieves a list of orders for the current user.
@@ -60,13 +57,12 @@
 			  *
 			  * @return string The city ID if valid, or an error message if not.
 			  */
-			 public function checkGovernorateAndCity(string $governorate, string $city): string
-			 {
+			 public function checkGovernorateAndCity(string $governorate,
+				  string $city
+			 ): string {
 					global $dbAction;
-					$governorate = $_POST['Governorate'];
-					$city = $_POST['City'];
-					
-					if (isset($governorate) && isset($city)) {
+
+					if ($governorate || $city) {
 						  $selectGovernorate = $dbAction->select("id", "governorates")
 								->where("governorate_name", " = ", "$governorate")
 								->getRow();
