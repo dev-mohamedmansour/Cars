@@ -29,8 +29,6 @@ const details = document.querySelector(".details");
 const order = document.querySelector(".order");
 
 
-
-
 detailsBtn.addEventListener("click", () => {
 
     moveBtn.classList.remove("rightBtn");

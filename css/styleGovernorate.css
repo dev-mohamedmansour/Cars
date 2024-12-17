@@ -4,202 +4,217 @@
 /*    text-align: right;*/
 /*    margin: 20px;*/
 /*  }*/
-  
-  .containerGovernorate {
+
+.containerGovernorate {
     max-width: 300px;
     margin-right: auto;
     margin-left: auto;
     margin-top: 5%;
-  }
-  
-  .label-governorate {
+}
+
+.label-governorate {
     display: block;
     margin: 10px 0 5px;
     font-size: 18px;
     font-weight: bold;
-    color:tomato ;
+    color: tomato;
     text-align: center;
-  }
-.gender{
-  background-color: #dadada;
-  display: flex;
-  padding: 10px 15px;
-  border-radius:18px ;
-  margin-bottom: 13px;
 }
 
-.bd1{
-  margin-left: auto;
+.gender {
+    background-color: #dadada;
+    display: flex;
+    padding: 10px 15px;
+    border-radius: 18px;
+    margin-bottom: 13px;
 }
-  .select-governorate {
+
+.bd1 {
+    margin-left: auto;
+}
+
+.select-governorate {
     display: block;
     width: 80%;
-    padding: 10px ;
+    padding: 10px;
     /*color: #1a1e21;*/
     /*margin-bottom: 15px;*/
     font-size: 18px;
-    border: 1px solid #ccc ;
+    border: 1px solid #ccc;
     border: none;
     margin: auto;
     border-radius: 5px;
-  }
-  
-  .select-governorate:focus {
+}
+
+.select-governorate:focus {
     border-color: #007bff;
-  }
-  
-  .hidden {
-    display:none;
-  }
+}
+
+.hidden {
+    display: none;
+}
 
 
 .actionBtns {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  position: relative;
-  z-index: 1;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    z-index: 1;
 
 }
-.overlay h2,h4,p{
-  font-size: 20px;
- text-align: center;
-}
-.backgroundImageCars{
-  border-radius: 15px;
-  background-image: url("../img/Alloy_Gullwing51.jpg");
-  width: 100%;
-  height: 100%;
-  background-size: cover;
-  background-position: center;
-  overflow: hidden;
-  position: relative;
-  z-index: 0;
-}
-.backgroundImageCar1{
-  border-radius: 15px;
-  background-image: url("../img/P1800_Green_11.jpg");
-  width: 100%;
-  height: 100%;
-  background-size: cover;
-  background-position: center;
-  overflow: hidden;
-  position: relative;
-  z-index: 0;
-}
-.backgroundImageCars2{
-  border-radius: 15px;
-  background-image: url("../img/UTCC201721.jpg");
-  width: 100%;
-  height: 100%;
-  background-size: cover;
-  background-position: center;
-  overflow: hidden;
-  position: relative;
-  z-index: 0;
-}
-.backgroundImageCars3{
-  border-radius: 15px;
-  background-image: url("../img/1961-Jaguar-E-Type-Series-1-3-8-Litre-Fixed-Head-Coupe-_63.jpg");
-  width: 100%;
-  height: 100%;
-  background-size: cover;
-  background-position: center;
-  overflow: hidden;
-  position: relative;
-  z-index: 0;
-}
-.backgroundImageCars4{
-  border-radius: 15px;
-  background-image: url("../img/wp88834111.jpg");
-  width: 100%;
-  height: 100%;
-  background-size: cover;
-  background-position: center;
-  overflow: hidden;
-  position: relative;
-  z-index: 0;
-}
-.backgroundImageCars5{
-  border-radius: 15px;
-  background-image: url("../img/OIP1.jpeg");
-  width: 100%;
-  height: 100%;
-  background-size: cover;
-  background-position: center;
-  overflow: hidden;
-  position: relative;
-  z-index: 0;
-}
-.imege-container{
 
-  /*width: 500px;*/
-  /*height: 420px;*/
+.overlay h2, h4, p {
+    font-size: 20px;
+    text-align: center;
+}
+
+.backgroundImageCars {
+    border-radius: 15px;
+    background-image: url("../img/Alloy_Gullwing51.jpg");
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+    position: relative;
+    z-index: 0;
+}
+
+.backgroundImageCar1 {
+    border-radius: 15px;
+    background-image: url("../img/P1800_Green_11.jpg");
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+    position: relative;
+    z-index: 0;
+}
+
+.backgroundImageCars2 {
+    border-radius: 15px;
+    background-image: url("../img/UTCC201721.jpg");
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+    position: relative;
+    z-index: 0;
+}
+
+.backgroundImageCars3 {
+    border-radius: 15px;
+    background-image: url("../img/1961-Jaguar-E-Type-Series-1-3-8-Litre-Fixed-Head-Coupe-_63.jpg");
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+    position: relative;
+    z-index: 0;
+}
+
+.backgroundImageCars4 {
+    border-radius: 15px;
+    background-image: url("../img/wp88834111.jpg");
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+    position: relative;
+    z-index: 0;
+}
+
+.backgroundImageCars5 {
+    border-radius: 15px;
+    background-image: url("../img/OIP1.jpeg");
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+    position: relative;
+    z-index: 0;
+}
+
+.imege-container {
+
+    /*width: 500px;*/
+    /*height: 420px;*/
 
 }
-.overlay{
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0,0,0,0.5);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  opacity: 0;
-  transition: opacity .3s ease;
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    opacity: 0;
+    transition: opacity .3s ease;
 }
-.imege-container:hover .overlay{
-  opacity: 1;
+
+.imege-container:hover .overlay {
+    opacity: 1;
 }
+
 .actionBtn {
-  padding: 1em;
-  width: 50%;
-  outline: none;
-  border: none;
-  background-color: transparent;
-  font-size: 15px;
-  font-weight: 600;
-  cursor: pointer;
+    padding: 1em;
+    width: 50%;
+    outline: none;
+    border: none;
+    background-color: transparent;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
 }
 
 .moveBtn {
-  position: absolute;
-  width: 50%;
-  height: 90%;
-  margin: 2px;
-  border: none;
-  outline: none;
-  background-color: #fff;
-  font-size: 15px;
-  font-weight: 600;
-  transform: translateX(0);
-  color: #ff4136;
-  border-radius:100px ;
+    position: absolute;
+    width: 50%;
+    height: 90%;
+    margin: 2px;
+    border: none;
+    outline: none;
+    background-color: #fff;
+    font-size: 15px;
+    font-weight: 600;
+    transform: translateX(0);
+    color: #ff4136;
+    border-radius: 100px;
 
 }
 
 .rightBtn {
-  transform: translateX(99%);
-  transition: all 0.2s ease-in-out;
+    transform: translateX(99%);
+    transition: all 0.2s ease-in-out;
 }
 
 
 /* rrrr */
 .form {
-  display: none;
+    display: none;
 }
 
 .detailsForm {
-  display: block;
+    display: block;
 }
+
 .orderForm {
-  display: block;
-  width: 100%;
+    display: block;
+    width: 100%;
 }
+
 /*.card-update{*/
 /*  background-color: #b2c0b7;*/
 /*}*/

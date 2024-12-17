@@ -68,17 +68,17 @@
 			  * This function validates the governorate and city, checks for existing orders,
 			  * inserts a new order if none exists, and retrieves car and category details.
 			  *
-			  * @param array  $data1       An array containing category information.
-			  * @param array  $data2       An array containing order details such as client_id, car_id, and details.
-			  * @param $governorate The governorate name for the order.
-			  * @param $city        The city name for the order.
+			  * @param array $data1 An array containing category information.
+			  * @param array $data2 An array containing order details such as client_id, car_id, and details.
+			  * @param       $governorate The governorate name for the order.
+			  * @param       $city        The city name for the order.
 			  *
 			  * @return array Returns the result of processing the order through the handelOrder method.
 			  *               If the governorate or city is invalid, it returns the result of handelOrder with the last known item.
 			  */
 			 public function getCar(array $data1, array $data2,
-				   $governorate,
-				   $city
+				  $governorate,
+				  $city
 			 ): string {
 					
 					$userDetails = new  UserInter();
@@ -101,7 +101,7 @@
 								 echo 'order send successfully!';
 								 header("Location: index.php");
 						  }
-					}else {
+					} else {
 						  $checkCityGovernorate
 								= $userDetails->checkGovernorateAndCity(
 								"$governorate", "$city"
@@ -119,8 +119,10 @@
 									  ->where(
 											"client_id", "=", $this->data2['clientId']
 									  )->andWhere(
-									  "car_id", "=", $this->data2['car_id']
-								 )->andWhere("city_id", "=", $this->data2['city_id'])
+											"car_id", "=", $this->data2['car_id']
+									  )->andWhere(
+											"city_id", "=", $this->data2['city_id']
+									  )
 									  ->getRow();
 								 
 								 if ($this->orderItem > 0) {
@@ -134,7 +136,7 @@
 								 }
 						  }
 					}
-						  return "order send successfully!";
+					return "order send successfully!";
 			 }
 			 
 			 /**
@@ -164,7 +166,7 @@
 			  * @return array The result of the getCar function, which processes the order and returns the order details.
 			  * @global object $dbAction The database action object used for executing queries.
 			  */
-			 public function ferrari( $governorate,  $city): array
+			 public function ferrari($governorate, $city): array
 			 {
 					global $dbAction;
 					$this->model = 'Ferrari';
@@ -182,7 +184,9 @@
 						 "details"   => $_POST['ferrari'],
 					];
 					
-					return $this->getCar($this->data2, $this->data1,$governorate,$city);
+					return $this->getCar(
+						 $this->data2, $this->data1, $governorate, $city
+					);
 			 }
 			 
 			 /**
@@ -194,7 +198,7 @@
 			  * @return array The result of the getCar function, which processes the order and returns the order details.
 			  * @global object $dbAction The database action object used for executing queries.
 			  */
-			 public function porsche( $governorate,  $city): array
+			 public function porsche($governorate, $city): array
 			 {
 					global $dbAction;
 					$this->model = 'Porsche';
@@ -213,7 +217,9 @@
 						 "details"   => $_POST['porsche'],
 					];
 					
-					return $this->getCar($this->data2, $this->data1,$governorate,$city);
+					return $this->getCar(
+						 $this->data2, $this->data1, $governorate, $city
+					);
 			 }
 			 
 			 /**
@@ -225,7 +231,7 @@
 			  * @return array The result of the getCar function, which processes the order and returns the order details.
 			  * @global object $dbAction The database action object used for executing queries.
 			  */
-			 public function jaguar( $governorate,  $city): array
+			 public function jaguar($governorate, $city): array
 			 {
 					global $dbAction;
 					$this->model = 'Jaguar';
@@ -244,7 +250,9 @@
 						 "details"   => $_POST['jaguar'],
 					];
 					
-					return $this->getCar($this->data2, $this->data1,$governorate,$city);
+					return $this->getCar(
+						 $this->data2, $this->data1, $governorate, $city
+					);
 			 }
 			 
 			 /**
@@ -256,7 +264,7 @@
 			  * @return array The result of the getCar function, which processes the order and returns the order details.
 			  * @global object $dbAction The database action object used for executing queries.
 			  */
-			 public function BMW( $governorate,  $city): array
+			 public function BMW($governorate, $city): array
 			 {
 					global $dbAction;
 					$this->model = 'BMW';
@@ -275,7 +283,9 @@
 						 "details"   => $_POST['BMW'],
 					];
 					
-					return $this->getCar($this->data2, $this->data1,$governorate,$city);
+					return $this->getCar(
+						 $this->data2, $this->data1, $governorate, $city
+					);
 			 }
 			 
 			 /**
@@ -287,7 +297,7 @@
 			  * @return array The result of the getCar function, which processes the order and returns the order details.
 			  * @global object $dbAction The database action object used for executing queries.
 			  */
-			 public function volvo( $governorate,  $city): array
+			 public function volvo($governorate, $city): array
 			 {
 					global $dbAction;
 					$this->model = 'Volvo';
@@ -306,6 +316,8 @@
 						 "details"   => $_POST['volvo'],
 					];
 					
-					return $this->getCar($this->data2, $this->data1,$governorate,$city);
+					return $this->getCar(
+						 $this->data2, $this->data1, $governorate, $city
+					);
 			 }
 	  }
