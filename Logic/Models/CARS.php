@@ -68,8 +68,8 @@
 			  * This function validates the governorate and city, checks for existing orders,
 			  * inserts a new order if none exists, and retrieves car and category details.
 			  *
-			  * @param array $data1 An array containing category information.
-			  * @param array $data2 An array containing order details such as client_id, car_id, and details.
+			  * @param array $data1       An array containing category information.
+			  * @param array $data2       An array containing order details such as client_id, car_id, and details.
 			  * @param       $governorate The governorate name for the order.
 			  * @param       $city        The city name for the order.
 			  *
