@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 	  <meta charset="utf-8"/>
 	  <meta name="viewport"
@@ -82,25 +81,21 @@
 		    </div>
 	  </div>
 </nav>
-Masthead
-
-
 <style>
     #contact {
         background-image: url(img/employees.jpg);
         background-attachment: revert;
-        margin-top: 100px;
+        margin-top: 20px;
     }
 </style>
 <main id="contact"
 	 class="cd-fixed-bg">
 	  <div class="cd-bg-2"
 		  style="height: 90vh;">
-		    <section style="padding-top: 160px;">
+		    <section>
 				 <div class="container">
 					   <div class="row row2">
-							<div class="col-lg-12 text-center"
-								style="margin-bottom: 45px;">
+							<div class="col-lg-12 text-center">
 								  <h2 class="section-heading">Sign
 									    up</h2>
 							</div>
@@ -149,6 +144,7 @@ Masthead
 												   </div>
 												   <div class="form-group">
 														<select
+															  class="select-governorate"
 															  id="governorates"
 															  name="Governorate">
 															  <option>
@@ -236,6 +232,7 @@ Masthead
 														<div id="center-container"
 															class="hidden">
 															  <select
+																    class="select-governorate"
 																    id="centers"
 																    name="City">
 																    <option>
@@ -259,7 +256,7 @@ Masthead
 															  maxlength="20"
 														<p class="help-block text-danger"></p>
 												   </div>
-												   <div class="form-group">
+												   <div class="gender">
 														<input
 															  type="radio"
 															  name="gender"
@@ -268,19 +265,19 @@ Masthead
 															  required
 															  checked
 															  data-validation-required-message="Please select your gender.">
+														&nbsp;
 														Male
-														&nbsp;
-														&nbsp;
-														&nbsp;&nbsp;&nbsp;&nbsp;
-														&nbsp;
-														&nbsp;&nbsp;&nbsp;
+
+
 														<input
+															  class="bd1"
 															  type="radio"
 															  name="gender"
 															  value=Female"
 															  id="radio_gender"
 															  required
 															  data-validation-required-message="Please select your gender.">
+														&nbsp;
 														female
 														<p class="help-block text-danger"></p>
 												   </div>

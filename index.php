@@ -46,6 +46,8 @@
 		   href="css/animate.css">
 	  <link rel="stylesheet"
 		   href="css/animate.min.css">
+	  <link rel="stylesheet"
+		   href="css/styleGovernorate.css">
 	  <link href="css/styles.css"
 		   rel="stylesheet"/>
 </head>
@@ -470,8 +472,7 @@
 
 <section id="products"
 	    class="sec-product">
-	  <!--	  --><?php
-			 //include 'Logic/homeLogic.php' ?>
+	  <?php //include 'Logic/homeLogic.php' ?>
 	  <div class="container">
 		    <div class="row row2">
 				 <div class="col-lg-12 text-center">
@@ -483,99 +484,448 @@
 				 </div>
 		    </div>
 		    <div class="row row2">
-				 <div class="card col-lg-4 wow animate__slideInUp"
-					 data-wow-duration="1s"
-					 data-wow-delay="0.3s">
-					   <form method="post"
-						    action="orderPages/selectGovernorate.php">
-							<div class="content">
-								  <h2 class="title">Mercedes SL 300
-									    Gullwing </h2>
-								  <h4> Today's selling
-									    price : .
-									    $1.7 million</h4>
-								  <button type="submit"
-										name="mercedes"
-										value="Mercedes SL
-									     300
-									     Gullwing">
-									    <p class="copy">The
-											 Mercedes SL
-											 300
-											 Gullwing
-											 is a classic
-											 sports car
-											 produced by
-											 Mercedes-Benz
-											 from 1954
-											 to
-											 1957, renowned
-											 for its
-											 iconic
-											 gull-wing doors
-											 and
-											 elegant
-											 design.
-											 Powered by a
-											 3.0-liter
-											 inline-six
-											 engine, it
-											 remains a
-											 highly
-											 sought-after
-											 collector's
-											 item
-											 for its
-											 rarity and
-											 timeless
-											 appeal.</p>
+				 <div class="hov col-lg-4 wow animate__slideInUp card-update"
+					 data-wow-duration="1s" data-wow-delay="0.3s">
+					   <div class="backgroundImageCars">
+							<div class="actionBtns">
+								  <button class="actionBtn detailsBtn">
+									    details
+								  </button>
+								  <button class="actionBtn orderBtn">
+									    order
+								  </button>
+								  <button class="moveBtn ">details
 								  </button>
 							</div>
-					   </form>
+							<div id="order" role="tabpanel">
+								  <form method="post" action=""
+									   class=" form order">
+									    <div>
+											 <label for="governorates"
+												   class="label-governorate">Select
+												   your
+												   Governorate</label>
+											 <select
+												   class="select-governorate"
+												   id="governorates"
+												   name="orderGovernorate">
+												   <option>
+														--
+														Select
+														your
+														Governorate
+														--
+												   </option>
+												   <option
+														value="Cairo">
+														Cairo
+												   </option>
+												   <option
+														value="Giza">
+														Giza
+												   </option>
+												   <option
+														value="Alexandria">
+														Alexandria
+												   </option>
+												   <option
+														value="Aswan">
+														Aswan
+												   </option>
+												   <option
+														value="Luxor">
+														Luxor
+												   </option>
+												   <option
+														value="Asyut">
+														Asyut
+												   </option>
+												   <option
+														value="Sohag">
+														Sohag
+												   </option>
+												   <option
+														value="Qena">
+														Qena
+												   </option>
+												   <option
+														value="Dakahlia">
+														Dakahlia
+												   </option>
+												   <option
+														value="Sharqia">
+														Sharqia
+												   </option>
+												   <option
+														value="Suez">
+														Suez
+												   </option>
+												   <option
+														value="Fayoum">
+														Fayoum
+												   </option>
+												   <option
+														value="RedSea">
+														RedSea
+												   </option>
+												   <option
+														value="Minya">
+														Minya
+												   </option>
+												   <option
+														value="NorthSinai">
+														NorthSinai
+												   </option>
+												   <option
+														value="SouthSinai">
+														SouthSinai
+												   </option>
+												   <option
+														value="PortSaid">
+														PortSaid
+												   </option>
+												   <option
+														value="BeniSufe">
+														Beni
+														Sufe
+												   </option>
+											 </select>
+											 <p></p>
+											 <div id="center-container"
+												 class="hidden">
+												   <label for="centers"
+														class="label-governorate">
+														Select
+														Your
+														Center
+												   </label>
+												   <select
+														id="centers"
+														class="select-governorate"
+														name="orderCity">
+														<option>
+															  --
+															  Select
+															  Your
+															  Center
+															  --
+														</option>
+												   </select>
+											 </div>
+											 <div class="col-lg-12 text-center">
+												   <div id="success"></div>
+												   <button
+														name="mercedes"
+														value="Mercedes SL 300 Gullwing"
+														type="submit"
+														class="btn btn-xl mt-5">
+														Save
+												   </button>
+											 </div>
+									    </div>
+								  </form>
+							</div>
+							<div id="details" role="tabpanel">
+								  <form action="#products"
+									   class="details form detailsForm">
+									    <div class="imege-container">
+											 <h4 class="nameCas text-center bg-light-gray mt-2">
+												   Mercedes
+												   SL
+												   300
+												   Gullwing</h4>
+											 <div class="overlay">
+												   <!--												   <h2 class="title">-->
+												   <!--														Mercedes-->
+												   <!--														SL-->
+												   <!--														300-->
+												   <!--														Gullwing </h2>-->
+												   <h4> Today's
+														selling
+														price : .
+														$1.7
+														million</h4>
+												   <button
+														type="button">
+														<p class="copy">
+															  The
+															  Mercedes
+															  SL
+															  300
+															  Gullwing
+															  is
+															  a
+															  classic
+															  sports
+															  car
+															  produced
+															  by
+															  Mercedes-Benz
+															  from
+															  1954
+															  to
+															  1957,
+															  renowned
+															  for
+															  its
+															  iconic
+															  gull-wing
+															  doors
+															  and
+															  elegant
+															  design.
+															  Powered
+															  by
+															  a
+															  3.0-liter
+															  inline-six
+															  engine,
+															  it
+															  remains
+															  a
+															  highly
+															  sought-after
+															  collector's
+															  item
+															  for
+															  its
+															  rarity
+															  and
+															  timeless
+															  appeal.</p>
+												   </button>
+											 </div>
+									    </div>
+								  </form>
+							</div>
+					   </div>
 				 </div>
-				 <div class="card col-lg-4 wow animate__slideInUp"
-					 data-wow-duration="1s"
-					 data-wow-delay="0.6s">
-					   <form method="post"
-						    action="">
-							<div class="content">
-								  <h2 class="title">Volvo P1800</h2>
-								  <h4> Today's selling
-									    price : $200000 k</h4>
-								  <button type="submit"
-										name="volvo"
-										value="Volvo P1800">
-									    <p class="copy">The Volvo P1800
-											 is a
-											 classic
-											 sports car produced by
-											 Volvo
-											 Cars from
-											 1961 to 1973. It gained
-											 fame as the car driven
-											 by Roger
-											 Moore's character Simon
-											 Templar
-											 in the
-											 television series "The
-											 Saint".
-											 With
-											 its sleek design and
-											 reliable
-											 performance, the P1800
-											 has
-											 earned a
-											 special place in
-											 automotive
-											 history
-											 and
-											 remains a beloved choice
-											 among
-											 classic
-											 car enthusiasts.</p>
+				 <div class="hov col-lg-4 wow animate__slideInUp card-update"
+					 data-wow-duration="1s" data-wow-delay="0.6s">
+					   <div class="backgroundImageCar1">
+							<div class="actionBtns">
+								  <button class="actionBtn detailsBtn">
+									    details
+								  </button>
+								  <button class="actionBtn orderBtn">
+									    order
+								  </button>
+								  <button class="moveBtn ">details
 								  </button>
 							</div>
-					   </form>
+							<div id="order" role="tabpanel">
+								  <form method="post" action=""
+									   class=" form order">
+									    <div>
+											 <label for="governorates"
+												   class="label-governorate">Select
+												   your
+												   Governorate</label>
+											 <select
+												   class="select-governorate"
+												   id="governorates"
+												   name="orderGovernorate">
+												   <option>
+														--
+														Select
+														your
+														Governorate
+														--
+												   </option>
+												   <option
+														value="Cairo">
+														Cairo
+												   </option>
+												   <option
+														value="Giza">
+														Giza
+												   </option>
+												   <option
+														value="Alexandria">
+														Alexandria
+												   </option>
+												   <option
+														value="Aswan">
+														Aswan
+												   </option>
+												   <option
+														value="Luxor">
+														Luxor
+												   </option>
+												   <option
+														value="Asyut">
+														Asyut
+												   </option>
+												   <option
+														value="Sohag">
+														Sohag
+												   </option>
+												   <option
+														value="Qena">
+														Qena
+												   </option>
+												   <option
+														value="Dakahlia">
+														Dakahlia
+												   </option>
+												   <option
+														value="Sharqia">
+														Sharqia
+												   </option>
+												   <option
+														value="Suez">
+														Suez
+												   </option>
+												   <option
+														value="Fayoum">
+														Fayoum
+												   </option>
+												   <option
+														value="RedSea">
+														RedSea
+												   </option>
+												   <option
+														value="Minya">
+														Minya
+												   </option>
+												   <option
+														value="NorthSinai">
+														NorthSinai
+												   </option>
+												   <option
+														value="SouthSinai">
+														SouthSinai
+												   </option>
+												   <option
+														value="PortSaid">
+														PortSaid
+												   </option>
+												   <option
+														value="BeniSufe">
+														Beni
+														Sufe
+												   </option>
+											 </select>
+											 <p></p>
+											 <div id="center-container"
+												 class="hidden">
+												   <label for="centers"
+														class="label-governorate">
+														Select
+														Your
+														Center
+												   </label>
+												   <select
+														id="centers"
+														class="select-governorate"
+														name="orderCity">
+														<option>
+															  --
+															  Select
+															  Your
+															  Center
+															  --
+														</option>
+												   </select>
+											 </div>
+											 <div class="col-lg-12 text-center">
+												   <div id="success"></div>
+												   <button
+														name="volvo"
+														value="Volvo P1800"
+														type="submit"
+														class="btn btn-xl mt-5">
+														Save
+												   </button>
+											 </div>
+									    </div>
+								  </form>
+							</div>
+							<div id="details" role="tabpanel">
+								  <form action="#products"
+									   class="details form detailsForm">
+									    <div class="imege-container">
+											 <h4 class="nameCas text-center bg-light-gray mt-2">
+												   Volvo
+												   P1800</h4>
+											 <div class="overlay">
+												   <!--											 <h2 class="title">Volvo-->
+												   <!--												   P1800</h2>-->
+												   <h4> Today's
+														selling
+														price :
+														$200000
+														k</h4>
+												   <button
+														type="button"
+														<p class="copy">
+															  The
+															  Volvo
+															  P1800
+															  is
+															  a
+															  classic
+															  sports
+															  car
+															  produced
+															  by
+															  Volvo
+															  Cars
+															  from
+															  1961
+															  to
+															  1973.
+															  It
+															  gained
+															  fame
+															  as
+															  the
+															  car
+															  driven
+															  by
+															  Roger
+															  Moore's
+															  character
+															  Simon
+															  Templar
+															  in
+															  the
+															  television
+															  series
+															  "The
+															  Saint".
+															  With
+															  its
+															  sleek
+															  design
+															  and
+															  reliable
+															  performance,
+															  the
+															  P1800
+															  has
+															  earned
+															  a
+															  special
+															  place
+															  in
+															  automotive
+															  history
+															  and
+															  remains
+															  a
+															  beloved
+															  choice
+															  among
+															  classic
+															  car
+															  enthusiasts.</p>
+												   </button>
+											 </div>
+									    </div>
+								  </form>
+							</div>
+					   </div>
 				 </div>
 
 				 <div class="card col-lg-4 wow animate__slideInUp"
@@ -786,8 +1136,9 @@
 				 <div id="success"></div>
 				 <button
 					   type="submit"
-					   class="btn btn-xl">
-					   <a href="orderPages/orderCustomize.php">Customize
+					   class="btn bg-success text-dark mt-3">
+					   <a href="orderPages/orderCustomize.php"
+						 class="text-dark">Customize
 							your car</a>
 				 </button>
 		    </div>
@@ -809,8 +1160,8 @@
     }
 
     .gallery-slider .items-group .item {
-        top: 0px;
-        left: 0px;
+        top: 0;
+        left: 0;
         opacity: 0;
         width: 100%;
         height: 100%;
@@ -1129,8 +1480,6 @@
 					   </div>
 					   <div class="row1">
 							<div class="col-lg-12">
-								  <!--													 --><?php
-															//@include 'Logic/homeLogic.php' ?>
 								  <form name="sentMessage"
 									   id="contactForm"
 									   novalidate=""
@@ -1380,14 +1729,17 @@
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="js/wow.min.js"></script>
+<script src="js/scriptGovernorate.js"></script>
+<script src="js/actionscript.js"></script>
 
-<script>
-    new WOW().init();
-</script>
+<!---->
+<!---->
+<!---->
+<!---->
 
 <!-- Bootstrap core JS-->
-<script
-	  src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+<!--<script-->
+<!--	  src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>-->
 <!-- Core theme JS-->
 <script src="js/scripts.js"></script>
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->

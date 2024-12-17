@@ -5,7 +5,7 @@
 	  @session_start();
 	  class UserInter
 	  {
-			 public array $selectOrders ;
+			 public array $selectOrders;
 			 
 			 /**
 			  * Retrieves a list of orders for the current user.
@@ -61,7 +61,7 @@
 				  string $city
 			 ): string {
 					global $dbAction;
-
+					
 					if ($governorate || $city) {
 						  $selectGovernorate = $dbAction->select("id", "governorates")
 								->where("governorate_name", " = ", "$governorate")

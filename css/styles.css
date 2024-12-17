@@ -717,6 +717,7 @@ progress {
 
 .row2 {
     justify-content: center;
+    margin: -5px;
 }
 
 .row > * {

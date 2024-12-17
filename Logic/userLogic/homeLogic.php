@@ -7,6 +7,7 @@
 	  
 	  $dbAction = new DB;
 	  $carType = new CARS;
+	  @session_start();
 	  /** @noinspection ALL */
 	  
 	  // logic of contact_us
@@ -24,25 +25,25 @@
 			 
 			 header('location:index.php');
 	  }
+	  
 	  // logic order products
 	  if (isset($_POST['mercedes'])) {
-			 
-			 $carType->mercedes();
+			 $carType->mercedes(
+				  $_POST['orderGovernorate'], $_POST['orderCity']
+			 );
 			 
 	  } elseif (isset($_POST['volvo'])) {
-			 $carType->volvo();
+			 $carType->volvo($_POST['orderGovernorate'], $_POST['orderCity']);
 			 
 	  } elseif (isset($_POST['BMW'])) {
-			 $carType->BMW();
+			 $carType->BMW($_POST['orderGovernorate'], $_POST['orderCity']);
 			 
 	  } elseif (isset($_POST['jaguar'])) {
-			 $carType->jaguar();
+			 $carType->jaguar($_POST['orderGovernorate'], $_POST['orderCity']);
 			 
 	  } elseif (isset($_POST['porsche'])) {
-			 $carType->porsche();
+			 $carType->porsche($_POST['orderGovernorate'], $_POST['orderCity']);
 			 
 	  } elseif (isset($_POST['ferrari'])) {
-			 $carType->ferrari();
-			 
+			 $carType->ferrari($_POST['orderGovernorate'], $_POST['orderCity']);
 	  }
-
