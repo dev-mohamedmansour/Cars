@@ -25,10 +25,13 @@
 			  * and prepares data for processing an order. If the car does not exist, it outputs a message.
 			  * It then calls the getCar function to handle the order processing.
 			  *
-			  * @return array The result of the getCar function, which processes the order and returns the order details.
+			  * @param string $governorate The governorate name for the order.
+			  * @param string $city        The city name for the order.
+			  *
+			  * @return string The result of the getCar function, which processes the order and returns the order details.
 			  * @global object $dbAction The database action object used for executing queries.
 			  */
-			 public function mercedes(string $governorate, string $city): array
+			 public function mercedes(string $governorate, string $city): string
 			 {
 					global $dbAction;
 					$this->model = 'Mercedes';
@@ -70,37 +73,24 @@
 			  *
 			  * @param array $data1       An array containing category information.
 			  * @param array $data2       An array containing order details such as client_id, car_id, and details.
-			  * @param       $governorate The governorate name for the order.
-			  * @param       $city        The city name for the order.
+			  * @param string $governorate The governorate name for the order.
+			  * @param string $city        The city name for the order.
 			  *
-			  * @return array Returns the result of processing the order through the handelOrder method.
-			  *               If the governorate or city is invalid, it returns the result of handelOrder with the last known item.
+			  * @return string Returns a success message if the order is sent successfully.
+			  *                If the governorate or city is invalid, it returns a message indicating the error.
+			  *                If an order already exists for the given client, car, and city, it returns a message indicating that.
+			  *
+			  * @global object $dbAction The database action object used for executing queries.
 			  */
 			 public function getCar(array $data1, array $data2,
-				  $governorate,
-				  $city
+				  string $governorate,
+				  string $city
 			 ): string {
 					
 					$userDetails = new  UserInter();
 					global $dbAction;
 					if (empty($governorate) && empty($city)) {
-						  $this->data2["city_id"] = $_SESSION['userCityId'];
-						  $this->orderItem = $dbAction->select("*", "orders")
-								->where(
-									 "client_id", "=", $this->data2['clientId']
-								)->andWhere(
-									 "car_id", "=", $this->data2['car_id']
-								)->getRow();
-						  
-						  if ($this->orderItem > 0) {
-								 echo "<h1 style='color: #0dcaf0'>orderPages already exist!</h1>";
-						  } else {
-								 $this->addOrder = $dbAction->insert(
-									  "orders", $this->data2
-								 )->execution();
-								 echo 'order send successfully!';
-								 header("Location: index.php");
-						  }
+								 header("Location: index.php#products");
 					} else {
 						  $checkCityGovernorate
 								= $userDetails->checkGovernorateAndCity(
@@ -131,7 +121,7 @@
 										$this->addOrder = $dbAction->insert(
 											 "orders", $this->data2
 										)->execution();
-										
+										header("Location: orderPages/orderDetails.php");
 										return 'order send successfully!';
 								 }
 						  }
@@ -140,33 +130,19 @@
 			 }
 			 
 			 /**
-			  * Processes an order and handles order-related operations.
-			  *
-			  * This function takes an item array as a parameter, which contains car and category details.
-			  * It prints the item array for debugging purposes and then returns the same array.
-			  *
-			  * @param array $item An array containing car and category details.
-			  *
-			  * @return array The same item array that was passed as a parameter.
-			  */
-//			 public function handelOrder(array $item): array
-//			 {
-//					echo "<pre>";
-//					print_r($item);
-//					echo "</pre>";
-//					return $item;
-//			 }
-			 
-			 /**
 			  * Processes an order for a Ferrari car.
 			  *
-			  * This function checks if a Ferrari car exists in the database, retrieves its category ID,
+			  * This function retrieves the details of a Ferrari car from the database, checks if it exists,
 			  * and prepares data for processing an order. It then calls the getCar function to handle the order processing.
 			  *
-			  * @return array The result of the getCar function, which processes the order and returns the order details.
+			  * @param string $governorate The governorate name for the order.
+			  * @param string $city        The city name for the order.
+			  *
+			  * @return string The result of the getCar function, which processes the order and returns the order details.
+			  *
 			  * @global object $dbAction The database action object used for executing queries.
 			  */
-			 public function ferrari($governorate, $city): array
+			 public function ferrari(string $governorate, string $city): string
 			 {
 					global $dbAction;
 					$this->model = 'Ferrari';
@@ -185,7 +161,7 @@
 					];
 					
 					return $this->getCar(
-						 $this->data2, $this->data1, $governorate, $city
+						 $this->data2, $this->data1,  $governorate, $city
 					);
 			 }
 			 
@@ -195,10 +171,14 @@
 			  * This function checks if a Porsche car exists in the database, retrieves its category ID,
 			  * and prepares data for processing an order. It then calls the getCar function to handle the order processing.
 			  *
-			  * @return array The result of the getCar function, which processes the order and returns the order details.
+			  * @param string $governorate The governorate name for the order.
+			  * @param string $city        The city name for the order.
+			  *
+			  * @return string The result of the getCar function, which processes the order and returns the order details.
+			  *
 			  * @global object $dbAction The database action object used for executing queries.
 			  */
-			 public function porsche($governorate, $city): array
+			 public function porsche(string $governorate,string $city): string
 			 {
 					global $dbAction;
 					$this->model = 'Porsche';
@@ -228,10 +208,14 @@
 			  * This function checks if a Jaguar car exists in the database, retrieves its category ID,
 			  * and prepares data for processing an order. It then calls the getCar function to handle the order processing.
 			  *
-			  * @return array The result of the getCar function, which processes the order and returns the order details.
+			  * @param string $governorate The governorate name for the order.
+			  * @param string $city        The city name for the order.
+			  *
+			  * @return string The result of the getCar function, which processes the order and returns the order details.
+			  *
 			  * @global object $dbAction The database action object used for executing queries.
 			  */
-			 public function jaguar($governorate, $city): array
+			 public function jaguar(string $governorate,string $city): string
 			 {
 					global $dbAction;
 					$this->model = 'Jaguar';
@@ -261,10 +245,14 @@
 			  * This function checks if a BMW car exists in the database, retrieves its category ID,
 			  * and prepares data for processing an order. It then calls the getCar function to handle the order processing.
 			  *
-			  * @return array The result of the getCar function, which processes the order and returns the order details.
+			  * @param string $governorate The governorate name for the order.
+			  * @param string $city        The city name for the order.
+			  *
+			  * @return string The result of the getCar function, which processes the order and returns the order details.
+			  *
 			  * @global object $dbAction The database action object used for executing queries.
 			  */
-			 public function BMW($governorate, $city): array
+			 public function BMW(string $governorate,string $city): string
 			 {
 					global $dbAction;
 					$this->model = 'BMW';
@@ -294,10 +282,14 @@
 			  * This function checks if a Volvo car exists in the database, retrieves its category ID,
 			  * and prepares data for processing an order. It then calls the getCar function to handle the order processing.
 			  *
-			  * @return array The result of the getCar function, which processes the order and returns the order details.
+			  * @param string $governorate The governorate name for the order.
+			  * @param string $city        The city name for the order.
+			  *
+			  * @return string The result of the getCar function, which processes the order and returns the order details.
+			  *
 			  * @global object $dbAction The database action object used for executing queries.
 			  */
-			 public function volvo($governorate, $city): array
+			 public function volvo(string $governorate,string $city): string
 			 {
 					global $dbAction;
 					$this->model = 'Volvo';

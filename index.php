@@ -51,6 +51,15 @@
 	  <link href="css/styles.css"
 		   rel="stylesheet"/>
 </head>
+<!-- LOADING AREA START ===== -->
+<div class="loading-area">
+	  <div class="loading-box"></div>
+	  <div class="loading-pic">
+		    <img class="loader-gif" src="img/loader-car.gif"
+			    alt="loader Image">
+	  </div>
+</div>
+<!-- LOADING AREA  END ====== -->
 
 <body id="page-top">
 
@@ -68,17 +77,6 @@
 	  <div class="container">
 		    <a class="navbar-brand"
 			  href="#page-top">Classic Cars</a>
-		    <!--        <button-->
-		    <!--                class = "navbar-toggle text-uppercase font-weight-bold bg-primary text-white rounded"-->
-		    <!--                type = "button"-->
-		    <!--                data-bs-toggle = "collapse"-->
-		    <!--                data-bs-target = "#navbarResponsive"-->
-		    <!--                aria-controls = "navbarResponsive"-->
-		    <!--                aria-expanded = "false"-->
-		    <!--                aria-label = "Toggle navigation">-->
-		    <!--            Menu-->
-		    <!--            <i class = "fas fa-bars"></i>-->
-		    <!--        </button>-->
 		    <div class="collapse navbar-collapse"
 			    id="navbarResponsive">
 				 <ul class="navbar-nav ms-auto">
@@ -104,24 +102,14 @@
 								  class="nav-link py-3 px-0 px-lg-3 rounded"
 								  href="#contact">Contact</a>
 					   </li>
-					   <!--				 </ul>-->
-					   <!--		    </div>-->
-					   <!--		    <div class="collapse navbar-collapse" id="navbarResponsive">-->
-					   <!--				 <ul class="navbar-nav ms-auto">-->
 					   <li class="nav-item mx-0 mx-lg-1"><a
 								  class="nav-link py-3 px-0 px-lg-3 rounded"
 								  href="orderPages/orderDetails.php">Orders
 								  Details</a>
+					   </li>					   <li class="nav-item mx-0 mx-lg-1"><a
+								  class="nav-link py-3 px-0 px-lg-3 rounded"
+								  href="orderPages/orderCustomize.php">Orders Customization</a>
 					   </li>
-					   <!--					   <li class="nav-item mx-0 mx-lg-1"><a-->
-					   <!--								  class="nav-link py-3 px-0 px-lg-3 rounded"-->
-					   <!--								  href="sign_up.php">Sign Up</a></li>-->
-					   <!--					   <li class="nav-item mx-0 mx-lg-1"><a-->
-					   <!--								  class="nav-link py-3 px-0 px-lg-3 rounded"-->
-					   <!--								  target="_blank"-->
-					   <!--								  href="login.php">Login</a></li>-->
-					   <!--				 </ul>-->
-					   <!--				 <ul>-->
 					   <li class="nav-item mx-0 mx-lg-1"><a
 								  class="nav-link py-3 px-0 px-lg-3 rounded"
 								  href="logout.php">Logout</a>
@@ -472,7 +460,6 @@
 
 <section id="products"
 	    class="sec-product">
-	  <?php //include 'Logic/homeLogic.php' ?>
 	  <div class="container">
 		    <div class="row row2">
 				 <div class="col-lg-12 text-center">
@@ -484,7 +471,8 @@
 				 </div>
 		    </div>
 		    <div class="row row2">
-				 <div class="hov col-lg-4 wow animate__slideInUp card-update"
+				 <!-- Car 1 -->
+				 <div class="hov col-lg-4 wow animate__slideInUp card-update card"
 					 data-wow-duration="1s" data-wow-delay="0.3s">
 					   <div class="backgroundImageCars">
 							<div class="actionBtns">
@@ -506,8 +494,7 @@
 												   your
 												   Governorate</label>
 											 <select
-												   class="select-governorate"
-												   id="governorates"
+												   class="select-governorate governorates"
 												   name="orderGovernorate">
 												   <option>
 														--
@@ -591,8 +578,7 @@
 												   </option>
 											 </select>
 											 <p></p>
-											 <div id="center-container"
-												 class="hidden">
+											 <div class="hidden center-container">
 												   <label for="centers"
 														class="label-governorate">
 														Select
@@ -600,8 +586,7 @@
 														Center
 												   </label>
 												   <select
-														id="centers"
-														class="select-governorate"
+														class="select-governorate centers"
 														name="orderCity">
 														<option>
 															  --
@@ -626,10 +611,10 @@
 								  </form>
 							</div>
 							<div id="details" role="tabpanel">
-								  <form action="#products"
+								  <form method="post" action="#products"
 									   class="details form detailsForm">
 									    <div class="imege-container">
-											 <h4 class="nameCas text-center bg-light-gray mt-2">
+											 <h4 class="nameCas text-center mansBackground mt-2">
 												   Mercedes
 												   SL
 												   300
@@ -700,7 +685,8 @@
 							</div>
 					   </div>
 				 </div>
-				 <div class="hov col-lg-4 wow animate__slideInUp card-update"
+				 <!-- Car 2 -->
+				 <div class="hov col-lg-4 wow animate__slideInUp card-update card"
 					 data-wow-duration="1s" data-wow-delay="0.6s">
 					   <div class="backgroundImageCar1">
 							<div class="actionBtns">
@@ -722,8 +708,8 @@
 												   your
 												   Governorate</label>
 											 <select
-												   class="select-governorate"
-												   id="governorates"
+												   class="select-governorate  governorates"
+
 												   name="orderGovernorate">
 												   <option>
 														--
@@ -807,8 +793,7 @@
 												   </option>
 											 </select>
 											 <p></p>
-											 <div id="center-container"
-												 class="hidden">
+											 <div class="center-container hidden">
 												   <label for="centers"
 														class="label-governorate">
 														Select
@@ -816,8 +801,8 @@
 														Center
 												   </label>
 												   <select
-														id="centers"
-														class="select-governorate"
+
+														class="select-governorate centers"
 														name="orderCity">
 														<option>
 															  --
@@ -845,7 +830,7 @@
 								  <form action="#products"
 									   class="details form detailsForm">
 									    <div class="imege-container">
-											 <h4 class="nameCas text-center bg-light-gray mt-2">
+											 <h4 class="nameCas text-center mansBackground mt-2">
 												   Volvo
 												   P1800</h4>
 											 <div class="overlay">
@@ -927,209 +912,910 @@
 							</div>
 					   </div>
 				 </div>
+				 <!-- Car 3 -->
+				 <div class="hov col-lg-4 wow animate__slideInUp card-update card"
+					 data-wow-duration="1s" data-wow-delay="0.6s">
+					   <div class="backgroundImageCar2">
+							<div class="actionBtns">
+								  <button class="actionBtn detailsBtn">
+									    details
+								  </button>
+								  <button class="actionBtn orderBtn">
+									    order
+								  </button>
+								  <button class="moveBtn ">details
+								  </button>
+							</div>
+							<div id="order" role="tabpanel">
+								  <form method="post" action=""
+									   class=" form order">
+									    <div>
+											 <label for="governorates"
+												   class="label-governorate">Select
+												   your
+												   Governorate</label>
+											 <select
+												   class="select-governorate  governorates"
 
-				 <div class="card col-lg-4 wow animate__slideInUp"
-					 data-wow-duration="1s"
-					 data-wow-delay="0.9s">
-					   <form method="post"
-						    action="">
-							<div class="content">
-								  <h2 class="title">BMW 3.0 CSL</h2>
-								  <h4> Today's selling
-									    price : $229,900 k</h4>
-								  <button type="submit"
-										name="BMW"
-										value="BMW 3.0 CSL">
-									    <p class="copy">The BMW 3.0 CSL
-											 is a
-											 legendary sports car
-											 manufactured by
-											 BMW from 1971 to 1975.
-											 It
-											 became
-											 famous for its
-											 remarkable
-											 success in
-											 motorsport, including
-											 winning
-											 the
-											 European Touring Car
-											 Championship.
-											 With its iconic
-											 "Batmobile"
-											 design and
-											 high-performance engine,
-											 the
-											 3.0 CSL
-											 captured the hearts of
-											 racing
-											 enthusiasts
-											 worldwide.</p>
-								  </button>
-							</div>
-					   </form>
-				 </div>
+												   name="orderGovernorate">
+												   <option>
+														--
+														Select
+														your
+														Governorate
+														--
+												   </option>
+												   <option
+														value="Cairo">
+														Cairo
+												   </option>
+												   <option
+														value="Giza">
+														Giza
+												   </option>
+												   <option
+														value="Alexandria">
+														Alexandria
+												   </option>
+												   <option
+														value="Aswan">
+														Aswan
+												   </option>
+												   <option
+														value="Luxor">
+														Luxor
+												   </option>
+												   <option
+														value="Asyut">
+														Asyut
+												   </option>
+												   <option
+														value="Sohag">
+														Sohag
+												   </option>
+												   <option
+														value="Qena">
+														Qena
+												   </option>
+												   <option
+														value="Dakahlia">
+														Dakahlia
+												   </option>
+												   <option
+														value="Sharqia">
+														Sharqia
+												   </option>
+												   <option
+														value="Suez">
+														Suez
+												   </option>
+												   <option
+														value="Fayoum">
+														Fayoum
+												   </option>
+												   <option
+														value="RedSea">
+														RedSea
+												   </option>
+												   <option
+														value="Minya">
+														Minya
+												   </option>
+												   <option
+														value="NorthSinai">
+														NorthSinai
+												   </option>
+												   <option
+														value="SouthSinai">
+														SouthSinai
+												   </option>
+												   <option
+														value="PortSaid">
+														PortSaid
+												   </option>
+												   <option
+														value="BeniSufe">
+														Beni
+														Sufe
+												   </option>
+											 </select>
+											 <p></p>
+											 <div class="center-container hidden">
+												   <label for="centers"
+														class="label-governorate">
+														Select
+														Your
+														Center
+												   </label>
+												   <select
 
-				 <div class="card col-lg-4 wow animate__slideInUp"
-					 data-wow-duration="1s"
-					 data-wow-delay="1.2s">
-					   <form method="post"
-						    action="">
-							<div class="content">
-								  <h2 class="title">Jaguar E-Type</h2>
-								  <h4> Today's selling
-									    price : $71,664 k</h4>
-								  <button type="submit"
-										name="jaguar"
-										value="Jaguar E-Type">
-									    <p class="copy">The Jaguar
-											 E-Type,
-											 often
-											 referred to as the "most
-											 beautiful car
-											 ever made" by Enzo
-											 Ferrari,
-											 is an icon of automotive
-											 design
-											 and
-											 performance. Produced by
-											 Jaguar
-											 Cars
-											 from 1961 to 1975, the
-											 E-Type
-											 captivated the world
-											 with its
-											 stunning
-											 aesthetics and
-											 exhilarating
-											 driving
-											 experience. With its
-											 sleek
-											 curves and powerful
-											 engine,
-											 driving
-											 the E-Type is like
-											 embarking on
-											 a
-											 journey to the stars. It
-											 remains a
-											 timeless symbol of
-											 automotive
-											 excellence and a dream
-											 car for
-											 enthusiasts around the
-											 globe.</p>
-								  </button>
+														class="select-governorate centers"
+														name="orderCity">
+														<option>
+															  --
+															  Select
+															  Your
+															  Center
+															  --
+														</option>
+												   </select>
+											 </div>
+											 <div class="col-lg-12 text-center">
+												   <div id="success"></div>
+												   <button
+														type="submit"
+														name="BMW"
+														value="BMW 3.0 CSL"
+														class="btn btn-xl mt-5">
+														Save
+												   </button>
+											 </div>
+									    </div>
+								  </form>
 							</div>
-					   </form>
+							<div id="details" role="tabpanel">
+								  <form action="#products"
+									   class="details form detailsForm">
+									    <div class="imege-container">
+											 <h4 class="nameCas text-center mansBackground mt-2">
+												   BMW 3.0 CSL</h4>
+											 <div class="overlay">
+												   <!--												   <h2 class="title">BMW 3.0 CSL</h2>-->
+												   <h4> Today's
+														selling
+														price :
+														$229,900
+														k</h4>
+												   <button
+														type="submit">
+														<p class="copy">
+															  The
+															  BMW
+															  3.0
+															  CSL
+															  is
+															  a
+															  legendary
+															  sports
+															  car
+															  manufactured
+															  by
+															  BMW
+															  from
+															  1971
+															  to
+															  1975.
+															  It
+															  became
+															  famous
+															  for
+															  its
+															  remarkable
+															  success
+															  in
+															  motorsport,
+															  including
+															  winning
+															  the
+															  European
+															  Touring
+															  Car
+															  Championship.
+															  With
+															  its
+															  iconic
+															  "Batmobile"
+															  design
+															  and
+															  high-performance
+															  engine,
+															  the
+															  3.0
+															  CSL
+															  captured
+															  the
+															  hearts
+															  of
+															  racing
+															  enthusiasts
+															  worldwide.</p>
+												   </button>
+
+											 </div>
+									    </div>
+								  </form>
+							</div>
+					   </div>
 				 </div>
-				 <div class="card col-lg-4 wow animate__slideInUp"
-					 data-wow-duration="1s"
-					 data-wow-delay="1.5s">
-					   <form method="post"
-						    action="">
-							<div class="content">
-								  <h2 class="title">Porsche 911</h2>
-								  <h4> Today's selling
-									    price : $122,095 k</h4>
-								  <button type="submit"
-										name="porsche"
-										value="Porsche 911">
-									    <p class="copy">The Porsche 911
-											 is an
-											 automotive legend,
-											 renowned for
-											 its
-											 precision engineering
-											 and
-											 timeless
-											 design. Introduced in
-											 1963, the
-											 911
-											 has evolved over
-											 generations
-											 while
-											 maintaining its
-											 unmistakable
-											 silhouette and
-											 performance
-											 pedigree.
-											 With its rear-engine
-											 layout and
-											 distinctive styling, the
-											 911
-											 offers a
-											 driving experience like
-											 no
-											 other.
-											 Whether carving through
-											 winding
-											 roads
-											 or cruising on the open
-											 highway,
-											 It's a symbol of
-											 automotive
-											 innovation
-											 and a testament to
-											 Porsche's
-											 commitment to
-											 excellence.</p>
+				 <!-- Car 4 -->
+				 <div class="hov col-lg-4 wow animate__slideInUp card-update card"
+					 data-wow-duration="1s" data-wow-delay="0.6s">
+					   <div class="backgroundImageCar3">
+							<div class="actionBtns">
+								  <button class="actionBtn detailsBtn">
+									    details
+								  </button>
+								  <button class="actionBtn orderBtn">
+									    order
+								  </button>
+								  <button class="moveBtn ">details
 								  </button>
 							</div>
-					   </form>
+							<div id="order" role="tabpanel">
+								  <form method="post" action=""
+									   class=" form order">
+									    <div>
+											 <label for="governorates"
+												   class="label-governorate">Select
+												   your
+												   Governorate</label>
+											 <select
+												   class="select-governorate  governorates"
+
+												   name="orderGovernorate">
+												   <option>
+														--
+														Select
+														your
+														Governorate
+														--
+												   </option>
+												   <option
+														value="Cairo">
+														Cairo
+												   </option>
+												   <option
+														value="Giza">
+														Giza
+												   </option>
+												   <option
+														value="Alexandria">
+														Alexandria
+												   </option>
+												   <option
+														value="Aswan">
+														Aswan
+												   </option>
+												   <option
+														value="Luxor">
+														Luxor
+												   </option>
+												   <option
+														value="Asyut">
+														Asyut
+												   </option>
+												   <option
+														value="Sohag">
+														Sohag
+												   </option>
+												   <option
+														value="Qena">
+														Qena
+												   </option>
+												   <option
+														value="Dakahlia">
+														Dakahlia
+												   </option>
+												   <option
+														value="Sharqia">
+														Sharqia
+												   </option>
+												   <option
+														value="Suez">
+														Suez
+												   </option>
+												   <option
+														value="Fayoum">
+														Fayoum
+												   </option>
+												   <option
+														value="RedSea">
+														RedSea
+												   </option>
+												   <option
+														value="Minya">
+														Minya
+												   </option>
+												   <option
+														value="NorthSinai">
+														NorthSinai
+												   </option>
+												   <option
+														value="SouthSinai">
+														SouthSinai
+												   </option>
+												   <option
+														value="PortSaid">
+														PortSaid
+												   </option>
+												   <option
+														value="BeniSufe">
+														Beni
+														Sufe
+												   </option>
+											 </select>
+											 <p></p>
+											 <div class="center-container hidden">
+												   <label for="centers"
+														class="label-governorate">
+														Select
+														Your
+														Center
+												   </label>
+												   <select
+
+														class="select-governorate centers"
+														name="orderCity">
+														<option>
+															  --
+															  Select
+															  Your
+															  Center
+															  --
+														</option>
+												   </select>
+											 </div>
+											 <div class="col-lg-12 text-center">
+												   <div id="success"></div>
+												   <button
+														type="submit"
+														name="jaguar"
+														value="Jaguar E-Type"
+														class="btn btn-xl mt-5">
+														Save
+												   </button>
+											 </div>
+									    </div>
+								  </form>
+							</div>
+							<div id="details" role="tabpanel">
+								  <form action="#products"
+									   class="details form detailsForm">
+									    <div class="imege-container">
+											 <h4 class="nameCas text-center mansBackground mt-2">
+												   Jaguar
+												   E-Type</h4>
+											 <div class="overlay">
+
+												   <!--												   <h2 class="title">Jaguar E-Type</h2>-->
+												   <h4> Today's
+														selling
+														price :
+														$71,664
+														k</h4>
+												   <button
+														type="submit">
+														<p class="copy">
+															  The
+															  Jaguar
+															  E-Type,
+															  often
+															  referred
+															  to
+															  as
+															  the
+															  "most
+															  beautiful
+															  car
+															  ever
+															  made"
+															  by
+															  Enzo
+															  Ferrari,
+															  is
+															  an
+															  icon
+															  of
+															  automotive
+															  design
+															  and
+															  performance.
+															  Produced
+															  by
+															  Jaguar
+															  Cars
+															  from
+															  1961
+															  to
+															  1975,
+															  the
+															  E-Type
+															  captivated
+															  the
+															  world
+															  with
+															  its
+															  stunning
+															  aesthetics
+															  and
+															  exhilarating
+															  driving
+															  experience.
+															  With
+															  its
+															  sleek
+															  curves
+															  and
+															  powerful
+															  engine,
+															  driving
+															  the
+															  E-Type
+															  is
+															  like
+															  embarking
+															  on
+															  a
+															  journey
+															  to
+															  the
+															  stars.</p>
+												   </button>
+											 </div>
+									    </div>
+								  </form>
+							</div>
+					   </div>
 				 </div>
-				 <div class="card col-lg-4 wow animate__slideInUp"
-					 data-wow-duration="1s"
-					 data-wow-delay="1.8s">
-					   <form method="post"
-						    action="">
-							<div class="content">
-								  <h2 class="title">Ferrari 250 GTO</h2>
-								  <h4> Today's selling
-									    price : $30,260,179
-									    million</h4>
-								  <button type="submit"
-										value="Ferrari 250 GTO"
-										name="ferrari">
-									    <p class="copy">The Ferrari 250
-											 GTO is
-											 an
-											 automotive masterpiece,
-											 celebrated for
-											 its combination of
-											 beauty,
-											 performance. It is
-											 considered
-											 the 250
-											 GTO, produced by Ferrari
-											 in the
-											 early
-											 1960s. With its powerful
-											 V12
-											 engine, the 250 GTO
-											 dominates
-											 the
-											 racetrack. Its racing
-											 pedigree
-											 includes victories in
-											 prestigious
-											 events
-											 such as the Tour de
-											 France auto
-											 race
-											 and the 24 Hours of Le
-											 Mans.
-											 With only
-											 36 cars ever produced,
-											 owning
-											 a Ferrari 250 GTO is the
-											 ultimate
-											 aspiration for
-											 collectors and
-											 enthusiasts alike.</p>
+				 <!--Car 5-->
+				 <div class="hov col-lg-4 wow animate__slideInUp card-update card"
+					 data-wow-duration="1s" data-wow-delay="0.6s">
+					   <div class="backgroundImageCar4">
+							<div class="actionBtns">
+								  <button class="actionBtn detailsBtn">
+									    details
+								  </button>
+								  <button class="actionBtn orderBtn">
+									    order
+								  </button>
+								  <button class="moveBtn ">details
 								  </button>
 							</div>
-					   </form>
+							<div id="order" role="tabpanel">
+								  <form method="post" action=""
+									   class=" form order">
+									    <div>
+											 <label for="governorates"
+												   class="label-governorate">Select
+												   your
+												   Governorate</label>
+											 <select
+												   class="select-governorate  governorates"
+
+												   name="orderGovernorate">
+												   <option>
+														--
+														Select
+														your
+														Governorate
+														--
+												   </option>
+												   <option
+														value="Cairo">
+														Cairo
+												   </option>
+												   <option
+														value="Giza">
+														Giza
+												   </option>
+												   <option
+														value="Alexandria">
+														Alexandria
+												   </option>
+												   <option
+														value="Aswan">
+														Aswan
+												   </option>
+												   <option
+														value="Luxor">
+														Luxor
+												   </option>
+												   <option
+														value="Asyut">
+														Asyut
+												   </option>
+												   <option
+														value="Sohag">
+														Sohag
+												   </option>
+												   <option
+														value="Qena">
+														Qena
+												   </option>
+												   <option
+														value="Dakahlia">
+														Dakahlia
+												   </option>
+												   <option
+														value="Sharqia">
+														Sharqia
+												   </option>
+												   <option
+														value="Suez">
+														Suez
+												   </option>
+												   <option
+														value="Fayoum">
+														Fayoum
+												   </option>
+												   <option
+														value="RedSea">
+														RedSea
+												   </option>
+												   <option
+														value="Minya">
+														Minya
+												   </option>
+												   <option
+														value="NorthSinai">
+														NorthSinai
+												   </option>
+												   <option
+														value="SouthSinai">
+														SouthSinai
+												   </option>
+												   <option
+														value="PortSaid">
+														PortSaid
+												   </option>
+												   <option
+														value="BeniSufe">
+														Beni
+														Sufe
+												   </option>
+											 </select>
+											 <p></p>
+											 <div class="center-container hidden">
+												   <label for="centers"
+														class="label-governorate">
+														Select
+														Your
+														Center
+												   </label>
+												   <select
+
+														class="select-governorate centers"
+														name="orderCity">
+														<option>
+															  --
+															  Select
+															  Your
+															  Center
+															  --
+														</option>
+												   </select>
+											 </div>
+											 <div class="col-lg-12 text-center">
+												   <div id="success"></div>
+												   <button
+														type="submit"
+														name="porsche"
+														value="Porsche 911"
+														class="btn btn-xl mt-5">
+														Save
+												   </button>
+											 </div>
+									    </div>
+								  </form>
+							</div>
+							<div id="details" role="tabpanel">
+								  <form action="#products"
+									   class="details form detailsForm">
+									    <div class="imege-container">
+											 <h4 class="nameCas text-center mansBackground mt-2">
+												   Porsche 911</h4>
+											 <div class="overlay">
+												   <!--												   <h2 class="title">Porsche 911</h2>-->
+												   <h4> Today's
+														selling
+														price :
+														$122,095
+														k</h4>
+												   <button
+														type="submit">
+														<p class="copy">
+															  The
+															  Porsche
+															  911
+															  is
+															  an
+															  automotive
+															  legend,
+															  renowned
+															  for
+															  its
+															  precision
+															  engineering
+															  and
+															  timeless
+															  design.
+															  Introduced
+															  in
+															  1963,
+															  the
+															  911
+															  has
+															  evolved
+															  over
+															  generations
+															  while
+															  maintaining
+															  its
+															  unmistakable
+															  silhouette
+															  and
+															  performance
+															  pedigree.
+															  With
+															  its
+															  rear-engine
+															  layout
+															  and
+															  distinctive
+															  styling,
+															  the
+															  911
+															  offers
+															  a
+															  driving
+															  experience
+															  like
+															  no
+															  other.
+															  Whether
+															  carving
+															  through
+															  winding
+															  roads
+															  or
+															  cruising
+															  on
+															  the
+															  open
+															  highway.</p>
+												   </button>
+											 </div>
+									    </div>
+								  </form>
+							</div>
+					   </div>
+				 </div>
+				 <!--Car 6-->
+				 <div class="hov col-lg-4 wow animate__slideInUp card-update card"
+					 data-wow-duration="1s" data-wow-delay="0.6s">
+					   <div class="backgroundImageCar5">
+							<div class="actionBtns">
+								  <button class="actionBtn detailsBtn">
+									    details
+								  </button>
+								  <button class="actionBtn orderBtn">
+									    order
+								  </button>
+								  <button class="moveBtn ">details
+								  </button>
+							</div>
+							<div id="order" role="tabpanel">
+								  <form method="post" action=""
+									   class=" form order">
+									    <div>
+											 <label for="governorates"
+												   class="label-governorate">Select
+												   your
+												   Governorate</label>
+											 <select
+												   class="select-governorate  governorates"
+
+												   name="orderGovernorate">
+												   <option>
+														--
+														Select
+														your
+														Governorate
+														--
+												   </option>
+												   <option
+														value="Cairo">
+														Cairo
+												   </option>
+												   <option
+														value="Giza">
+														Giza
+												   </option>
+												   <option
+														value="Alexandria">
+														Alexandria
+												   </option>
+												   <option
+														value="Aswan">
+														Aswan
+												   </option>
+												   <option
+														value="Luxor">
+														Luxor
+												   </option>
+												   <option
+														value="Asyut">
+														Asyut
+												   </option>
+												   <option
+														value="Sohag">
+														Sohag
+												   </option>
+												   <option
+														value="Qena">
+														Qena
+												   </option>
+												   <option
+														value="Dakahlia">
+														Dakahlia
+												   </option>
+												   <option
+														value="Sharqia">
+														Sharqia
+												   </option>
+												   <option
+														value="Suez">
+														Suez
+												   </option>
+												   <option
+														value="Fayoum">
+														Fayoum
+												   </option>
+												   <option
+														value="RedSea">
+														RedSea
+												   </option>
+												   <option
+														value="Minya">
+														Minya
+												   </option>
+												   <option
+														value="NorthSinai">
+														NorthSinai
+												   </option>
+												   <option
+														value="SouthSinai">
+														SouthSinai
+												   </option>
+												   <option
+														value="PortSaid">
+														PortSaid
+												   </option>
+												   <option
+														value="BeniSufe">
+														Beni
+														Sufe
+												   </option>
+											 </select>
+											 <p></p>
+											 <div class="center-container hidden">
+												   <label for="centers"
+														class="label-governorate">
+														Select
+														Your
+														Center
+												   </label>
+												   <select
+
+														class="select-governorate centers"
+														name="orderCity">
+														<option>
+															  --
+															  Select
+															  Your
+															  Center
+															  --
+														</option>
+												   </select>
+											 </div>
+											 <div class="col-lg-12 text-center">
+												   <div id="success"></div>
+												   <button
+														type="submit"
+														value="Ferrari 250 GTO"
+														name="ferrari"
+														class="btn btn-xl mt-5">
+														Save
+												   </button>
+											 </div>
+									    </div>
+								  </form>
+							</div>
+							<div id="details" role="tabpanel">
+								  <form action="#products"
+									   class="details form detailsForm">
+									    <div class="imege-container">
+											 <h4 class="nameCas text-center mansBackground mt-2">
+												   Ferrari
+												   250
+												   GTO</h4>
+											 <div class="overlay">
+												   <!--												   <h2 class="title">-->
+												   <!--														Ferrari-->
+												   <!--														250-->
+												   <!--														GTO</h2>-->
+												   <h4> Today's
+														selling
+														price :
+														$30,260,179
+														million</h4>
+												   <button
+														type="submit">
+														<p class="copy">
+															  The
+															  Ferrari
+															  250
+															  GTO
+															  is
+															  an
+															  automotive
+															  masterpiece,
+															  celebrated
+															  for
+															  its
+															  combination
+															  of
+															  beauty,
+															  performance.
+															  It
+															  is
+															  considered
+															  the
+															  250
+															  GTO,
+															  produced
+															  by
+															  Ferrari
+															  in
+															  the
+															  early
+															  1960s.
+															  With
+															  its
+															  powerful
+															  V12
+															  engine,
+															  the
+															  250
+															  GTO
+															  dominates
+															  the
+															  racetrack.
+															  Its
+															  racing
+															  pedigree
+															  includes
+															  victories
+															  in
+															  prestigious
+															  events
+															  such
+															  as
+															  the
+															  Tour
+															  de
+															  France
+															  auto
+															  race
+															  and
+															  the
+															  24
+															  Hours
+															  of
+															  Le
+															  Mans.
+															  With
+															  only
+															  36
+															  cars
+															  ever
+															  produced.</p>
+												   </button>
+											 </div>
+									    </div>
+								  </form>
+							</div>
+					   </div>
 				 </div>
 		    </div>
 		    <div class="col-lg-12 text-center">
@@ -1725,8 +2411,19 @@
 	  <!-- Copyright -->
 </footer>
 <!-- Footer -->
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const loadingArea = document.querySelector(".loading-area");
 
-
+// Set timeout for 10 seconds
+        setTimeout(() => {
+            loadingArea.style.opacity = "0"; // Smooth fade-out effect
+            setTimeout(() => {
+                loadingArea.style.display = "none"; // Hide after fade-out
+            }, 500); // Matches the CSS transition duration
+        }, 5000);
+    });
+</script>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="js/wow.min.js"></script>
 <script src="js/scriptGovernorate.js"></script>

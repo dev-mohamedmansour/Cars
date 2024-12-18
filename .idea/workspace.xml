@@ -127,6 +127,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Node.js.scriptGovernorate.js.executor": "Run",
     "PHP Script.UserInter.php.executor": "Run",
     "PHP Script.loginLogic.php.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
@@ -142,14 +143,12 @@
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "run.code.analysis.last.selected.profile": "aDefault",
-    "settings.editor.selected.configurable": "settings.codegpt.services.google",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
     "vcs.patch.to.clipboard": "true",
     "vue.rearranger.settings.migration": "true"
   },
   "keyToStringList": {
-    "ChangesTree.GroupingKeys": [
-      "directory"
-    ],
+    "ChangesTree.GroupingKeys": [],
     "GitStage.ChangesTree.GroupingKeys": [
       "directory",
       "repository"
@@ -167,7 +166,10 @@
       <recent name="C:\xampp\htdocs\projects\cars\Logic\Constract" />
     </key>
   </component>
-  <component name="RunManager" selected="PHP Script.UserInter.php">
+  <component name="RunManager" selected="Node.js.scriptGovernorate.js">
+    <configuration name="scriptGovernorate.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/js/scriptGovernorate.js" working-dir="$PROJECT_DIR$/js">
+      <method v="2" />
+    </configuration>
     <configuration name="UserInter.php" type="PhpLocalRunConfigurationType" factoryName="PHP Console" temporary="true" path="$PROJECT_DIR$/Logic/Models/UserInter.php">
       <method v="2" />
     </configuration>
@@ -176,6 +178,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Node.js.scriptGovernorate.js" />
         <item itemvalue="PHP Script.loginLogic.php" />
         <item itemvalue="PHP Script.UserInter.php" />
       </list>
@@ -184,7 +187,6 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-d6986cc7102b-deb605915726-JavaScript-PS-243.22562.164" />
         <option value="bundled-php-predefined-a98d8de5180a-7980c7aaca61-com.jetbrains.php.sharedIndexes-PS-243.22562.164" />
         <option value="php-nikic_php_parser-5543a6ebd44f-b657ee4f" />
         <option value="php-symfony_console-5543a6ebd44f-5a7aa3a6" />
@@ -267,7 +269,13 @@
       <workItem from="1734387577396" duration="1270000" />
       <workItem from="1734388870504" duration="720000" />
       <workItem from="1734389624892" duration="1285000" />
-      <workItem from="1734397692955" duration="1728000" />
+      <workItem from="1734397692955" duration="2054000" />
+      <workItem from="1734441493204" duration="862000" />
+      <workItem from="1734442373575" duration="593000" />
+      <workItem from="1734442988889" duration="112000" />
+      <workItem from="1734443119268" duration="964000" />
+      <workItem from="1734446514477" duration="28397000" />
+      <workItem from="1734481668064" duration="9664000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <option name="closed" value="true" />
@@ -325,7 +333,31 @@
       <option name="project" value="LOCAL" />
       <updated>1733297740595</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="some edits">
+      <option name="closed" value="true" />
+      <created>1734399525520</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1734399525520</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Fix: Correct parameter types and formatting&#10;&#10;Corrects parameter types in function signatures to enforce type hinting.  Removes unnecessary spaces and improves code readability by consistently formatting parameters.  No functional changes are included in this commit.">
+      <option name="closed" value="true" />
+      <created>1734399609683</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1734399609683</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Fix: Standardize parameter documentation spacing in CARS model&#10;&#10;Standardizes the spacing in the PHPDoc `@param` annotations for the `addNewOrder` method.  No logic changes.">
+      <option name="closed" value="true" />
+      <created>1734399668245</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1734399668245</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -373,7 +405,10 @@
     <MESSAGE value="refactor(models): improve car order processing&#10;&#10;Improve the clarity and efficiency of car order processing in the models.&#10;&#10;* Add city_id to order data for better location tracking.&#10;* Refactor code for better readability and maintainability.&#10;* Add detailed function documentation.&#10;&#10;diff begin:  Improved order data structure and added city information.  Enhanced code clarity with comments and documentation. diff end." />
     <MESSAGE value="Generating commit message..." />
     <MESSAGE value="refactor(models, logic): improve car order processing&#10;&#10;Improve clarity and efficiency of car order processing.&#10;&#10;* Add city_id to order data for better location tracking.&#10;* Refactor code for better readability and maintainability.&#10;* Add detailed function documentation.&#10;&#10;Improved order data structure and added city information. Enhanced code clarity with comments and documentation." />
-    <option name="LAST_COMMIT_MESSAGE" value="refactor(models, logic): improve car order processing&#10;&#10;Improve clarity and efficiency of car order processing.&#10;&#10;* Add city_id to order data for better location tracking.&#10;* Refactor code for better readability and maintainability.&#10;* Add detailed function documentation.&#10;&#10;Improved order data structure and added city information. Enhanced code clarity with comments and documentation." />
+    <MESSAGE value="some edits" />
+    <MESSAGE value="Fix: Correct parameter types and formatting&#10;&#10;Corrects parameter types in function signatures to enforce type hinting.  Removes unnecessary spaces and improves code readability by consistently formatting parameters.  No functional changes are included in this commit." />
+    <MESSAGE value="Fix: Standardize parameter documentation spacing in CARS model&#10;&#10;Standardizes the spacing in the PHPDoc `@param` annotations for the `addNewOrder` method.  No logic changes." />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix: Standardize parameter documentation spacing in CARS model&#10;&#10;Standardizes the spacing in the PHPDoc `@param` annotations for the `addNewOrder` method.  No logic changes." />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">

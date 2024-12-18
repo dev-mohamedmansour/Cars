@@ -37,7 +37,6 @@
 		   href="../css/mdb.min.css.map">
 	  <link rel="stylesheet"
 		   href="../css/mdb.rtl.min.css">
-
 	  <link href="../css/styles.css"
 		   rel="stylesheet"/>
 	  <link href="../css/styleGovernorate.css"
@@ -62,38 +61,35 @@
 	  <div class="container">
 		    <a class="navbar-brand"
 			  href="#page-top">Classic Cars</a>
-		    <button
-				 class="navbar-toggle text-uppercase font-weight-bold bg-primary text-white rounded"
-				 type="button"
-				 data-bs-toggle="collapse"
-				 data-bs-target="#navbarResponsive"
-				 aria-controls="navbarResponsive"
-				 aria-expanded="false"
-				 aria-label="Toggle navigation">
-				 Menu
-				 <i class="fas fa-bars"></i>
-		    </button>
+		    <!--		    <button-->
+		    <!--				 class="navbar-toggle text-uppercase font-weight-bold bg-primary text-white rounded"-->
+		    <!--				 type="button"-->
+		    <!--				 data-bs-toggle="collapse"-->
+		    <!--				 data-bs-target="#navbarResponsive"-->
+		    <!--				 aria-controls="navbarResponsive"-->
+		    <!--				 aria-expanded="false"-->
+		    <!--				 aria-label="Toggle navigation">-->
+		    <!--				 Menu-->
+		    <!--				 <i class="fas fa-bars"></i>-->
+		    <!--		    </button>-->
 		    <div class="collapse navbar-collapse"
 			    id="navbarResponsive">
 				 <ul class="navbar-nav ms-auto">
-					   <li class="nav-item mx-0 mx-lg-1"><a
-								  class="nav-link py-3 px-0 px-lg-3 rounded"
-								  href="#contact">Orders</a></li>
 					   <li class="nav-item mx-0 mx-lg-1"><a
 								  class="nav-link py-3 px-0 px-lg-3 rounded"
 								  href="../index.php">Home
 							</a></li>
 					   <li class="nav-item mx-0 mx-lg-1"><a
 								  class="nav-link py-3 px-0 px-lg-3 rounded"
-								  href="../sign_up.php">Sign Up</a></li>
+								  href="orderDetails.php">Orders Details
+							</a></li>
 					   <li class="nav-item mx-0 mx-lg-1"><a
 								  class="nav-link py-3 px-0 px-lg-3 rounded"
-								  href="../login.php">Login</a></li>
-				 </ul>
-				 <ul>
-					   <li class="user-btn">
-							<a class="logout"
-							   href="../logout.php">logout</a>
+								  href="#contact">Orders
+								  Customization</a></li>
+					   <li class="nav-item mx-0 mx-lg-1"><a
+								  class="nav-link py-3 px-0 px-lg-3 rounded"
+								  href="../logout.php">Logout</a>
 					   </li>
 				 </ul>
 		    </div>
@@ -220,7 +216,7 @@
 												   <div class="form-group">
 														<select
 															  class="form-control"
-															  id="governorates"
+															  id="Any-governorate"
 															  name="orderCustomizeGovernorate">
 															  <option>
 																    --
@@ -304,11 +300,11 @@
 															  </option>
 														</select>
 														<p class="help-block text-danger"></p>
-														<div id="center-container"
+														<div id="Any-center-container"
 															class="hidden">
 															  <select
 																    class="form-control"
-																    id="centers"
+																    id="Any-center"
 																    name="orderCustomizeCity">
 																    <option>
 																		 --
@@ -525,7 +521,7 @@
 	  src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 <!-- Core theme JS-->
 <script src="../js/scripts.js"></script>
-<script src="../js/scriptGovernorate.js"></script>
+<script src="../js/orderAndRegisterGovernorates.js"></script>
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
 <!-- * *                               SB Forms JS                               * *-->
 <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->

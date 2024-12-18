@@ -36,7 +36,6 @@
 		   href="css/mdb.min.css.map">
 	  <link rel="stylesheet"
 		   href="css/mdb.rtl.min.css">
-
 	  <link href="css/styles.css"
 		   rel="stylesheet"/>
 	  <link href="css/styleGovernorate.css"
@@ -145,7 +144,7 @@
 												   <div class="form-group">
 														<select
 															  class="select-governorate"
-															  id="governorates"
+															  id="Any-governorate"
 															  name="Governorate">
 															  <option>
 																    --
@@ -229,11 +228,11 @@
 															  </option>
 														</select>
 														<p class="help-block text-danger"></p>
-														<div id="center-container"
+														<div id="Any-center-container"
 															class="hidden">
 															  <select
 																    class="select-governorate"
-																    id="centers"
+																    id="Any-center"
 																    name="City">
 																    <option>
 																		 --
@@ -466,7 +465,7 @@
 	  src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 <!-- Core theme JS-->
 <script src="js/scripts.js"></script>
-<script src="js/scriptGovernorate.js"></script>
+<script src="js/orderAndRegisterGovernorates.js"></script>
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
 <!-- * *                               SB Forms JS                               * *-->
 <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->

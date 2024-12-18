@@ -1,5 +1,5 @@
 :root {
-    --purple: #ffffff;
+    --purple: #cb0808;
     --red: #c0392b;
     --orange: #f39c12;
     --black: #333;
@@ -52,7 +52,7 @@
     border-radius: 24px;
     text-align: center;
     height: auto;
-    background-color: white;
+    background-color: #0194df;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     width: auto;
     line-break: anywhere;

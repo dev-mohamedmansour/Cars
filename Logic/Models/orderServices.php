@@ -22,6 +22,7 @@
 					global $dbAction;
 					
 					$getOrders = $dbAction->select('*', 'orders')->getAll();
-					
+					return $getOrders;
 			 }
+			 
 	  }

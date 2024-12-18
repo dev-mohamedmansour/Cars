@@ -1,5 +1,5 @@
 // noinspection SpellCheckingInspection
-const centersData = {
+const center1 = {
     Cairo: [
         "Dar El Salam", "El Basatin",
         "Maadi", "15 May City",
@@ -136,32 +136,28 @@ const centersData = {
     ],
 };
 
-// Find all card containers
-const cardContainers = document.querySelectorAll(".hov.col-lg-4.wow.animate__slideInUp.card-update");
 
-// Loop through each card container
-cardContainers.forEach((div) => {
-    const governorates = div.querySelector(".governorates");
-    const centers = div.querySelector(".centers");
-    const centerContainer = div.querySelector(".center-container");
+const governorate = document.getElementById("Any-governorate");
+const centersOf = document.getElementById("Any-center");
+const centerContainer1 = document.getElementById("Any-center-container");
 
-    // Add event listener to each governorate dropdown
-    governorates.addEventListener("change", () => {
-        const selectedGovernorate = governorates.value;
+governorate.addEventListener("change", () => {
+    const selectedGovernorate1 = governorate.value;
 
-        if (selectedGovernorate) {
-            centerContainer.classList.remove("hidden");
+    if (selectedGovernorate1) {
 
-            centers.innerHTML = '<option>-- Select Your Center --</option>';
+        centerContainer1.classList.remove("hidden");
 
-            centersData[selectedGovernorate].forEach((center) => {
-                const option = document.createElement("option");
-                option.value = center;
-                option.textContent = center;
-                centers.appendChild(option);
-            });
-        } else {
-            centerContainer.classList.add("hidden");
-        }
-    });
+        centersOf.innerHTML = '<option>-- Select Your Center --</option>';
+
+        center1[selectedGovernorate1].forEach(center => {
+            const option = document.createElement("option");
+            option.value = center;
+            option.textContent = center;
+            centersOf.appendChild(option);
+        });
+    } else {
+
+        centerContainer1.classList.add("hidden");
+    }
 });

@@ -36,7 +36,6 @@
 	  <div style="align-items: center" class="info-header">
 		    <div class="logo">
 				 <h3>Dashboard</h3>
-
 		    </div>
 
 		    <div style="cursor: pointer" class="icons-header">
@@ -51,12 +50,9 @@
 		    <i style="cursor: pointer" class="fa-solid fa-envelope"></i>
 		    <i style="cursor: pointer; margin: 0 8px"
 			  class="fa-solid fa-bell"></i>
-
-
 	  </div>
 </header>
 <!----------end Header-------->
-<!----------start main-------->
 <section class="main">
 	  <div class="sidebar">
 		    <h3>Admin Page</h3>
@@ -64,22 +60,18 @@
 					   class="fa-solid fa-house">Dashboard</i></a>
 		    <a href="admin_users.php"><i
 					   class="fa-solid fa-house"></i>User</a>
-		    <a href="admin_products.php"><i class="fa-solid fa-house"></i>Products</a>
 		    <a href="admin_orders.php"><i class="fa-solid fa-house"></i>Orders</a>
 		    <a href="admin_contacts.php"><i class="fa-solid fa-house"></i>Contacts</a>
 		    <br/>
 		    <div class="separator"></div>
 		    <h3>User Page </h3>
 		    <a href="../index.php"><i class="fa-solid fa-house"></i>Home</a>
-		    <!--		    <a href="../shoping.php"><i class="fa-solid fa-house"></i>Shop</a>-->
-		    <!--		    <a href="../orderPages/orderCustomize.php"><i class="fa-solid fa-house"></i>Order</a>-->
-		    <!--		    <a href="../contact.php"><i class="fa-solid fa-house"></i>Contact</a>-->
-		    <!--		    <a href="../about.php"><i class="fa-solid fa-house"></i>About</a>-->
 		    <br/>
 	  </div>
+
 	  <!----------start main-------->
 	  <div class="content">
-		    <div class="titular-secant">
+		    <div class="titulo-secao">
 				 <h2>Dashboard Home</h2>
 				 <div class="box">
 					   <br/>
@@ -88,9 +80,147 @@
 					   <p><i class="fa-solid fa-house"> / Dashboard
 								  Home</i></p>
 				 </div>
+		    </div>
+		    <div class="box-info">
+				 <div style="background: linear-gradient(45deg, #8e44ad, #eb8192)"
+					 class="box-info-sigle">
+					   <div class="info-text">
+											<?php
+												  
+												  $total_completed = 0;
+												  $select_completed = $dbAction->select(
+														"total_price", "orders"
+												  )->where(
+														"payment_status", "=", "completed"
+												  )->getAll();
+												  if ($select_completed > 0) {
+														 foreach (
+															  $select_completed as
+															  $fetch_completed
+														 ) {
+																$total_price
+																	 = $fetch_completed['total_price'];
+																$total_completed += $total_price;
+														 };
+												  };
+											?>
+							<h3>completed payments</h3>
+							<p><?php echo $total_completed . " "
+														  . "$" ?></p>
+					   </div>
+					   <i class="fa-solid fa-wallet"></i>
+				 </div>
+				 <div style="background: linear-gradient(45deg, #8e44ad, #eb8192)"
+					 class="box-info-sigle">
+					   <div class="info-text">
+											<?php
+												  $select_orders = $dbAction->select(
+														"COUNT(*)", "orders"
+												  )->getAll();
+												  foreach ($select_orders as $fetch_orders)
+												  {
+														 $number_of_orders
+															  = $fetch_orders['COUNT(*)'];
+												  }
+												  global $number_of_orders;
+											?>
+							<h3>order placed</h3>
+							<p><?php echo $number_of_orders . " "
+														  . " Orders" ?></p>
+					   </div>
+					   <i class="fa-solid fa-wallet"></i>
+				 </div>
+				 <div style="background: linear-gradient(45deg, #8e44ad, #eb8192)"
+					 class="box-info-sigle">
+					   <div class="info-text">
+											<?php
+												  $select_cars = $dbAction->select(
+														"COUNT(*)", "cars"
+												  )->getAll();
+												  foreach ($select_cars as $fetch_cars) {
+														 $number_of_cars
+															  = $fetch_cars['COUNT(*)'];
+												  }
+												  global $number_of_cars;
+											?>
+							<h3>number of cars</h3>
+							<p><?php echo $number_of_cars . " "
+														  . " Cars" ?></p>
+					   </div>
+					   <i class="fa-solid fa-wallet"></i>
+				 </div>
+				 <div style="background: linear-gradient(45deg, #8e44ad, #eb8192)"
+					 class="box-info-sigle">
+					   <div class="info-text">
+											<?php
+												  $select_users = $dbAction->select(
+														"COUNT(*)", "users"
+												  )->where("role", "=", "user")->getAll();
+												  foreach ($select_users as $fetch_users) {
+														 $number_of_users
+															  = $fetch_users['COUNT(*)'];
+												  }
+												  global $number_of_users;
+											?>
+							<h3>normal users</h3>
+							<p><?php echo $number_of_users . " "
+														  . " user" ?></p>
+					   </div>
+					   <i class="fa-solid fa-wallet"></i>
+				 </div>
+				 <div style="background: linear-gradient(45deg, #8e44ad, #eb8192)"
+					 class="box-info-sigle">
+					   <div class="info-text">
+											<?php
+												  $select_contact = $dbAction->select(
+														"COUNT(*)", "contact_us"
+												  )->getAll();
+												  foreach (
+														$select_contact as $fetch_contact
+												  ) {
+														 $number_of_contact
+															  = $fetch_contact['COUNT(*)'];
+												  }
+												  global $number_of_contact;
+											?>
+							<h3>new messages</h3>
+							<p><?php echo $number_of_contact . " "
+														  . "message" ?></p>
+					   </div>
+					   <i class="fa-solid fa-wallet"></i>
+				 </div>
 
+				 <div style="background: linear-gradient(45deg, #8e44ad, #eb8192)"
+					 class="box-info-sigle">
+					   <div class="info-text">
+											<?php
+												  
+												  $total_pending = 0;
+												  $select_pending = $dbAction->select(
+														"total_price", "orders"
+												  )->where(
+														"payment_status", "=", "pending"
+												  )->getAll();
+												  if ($select_pending > 0) {
+														 foreach (
+															  $select_pending as
+															  $fetch_pending
+														 ) {
+																$total_price_pending
+																	 = $fetch_pending['total_price'];
+																$total_pending += $total_price_pending;
+														 };
+												  };
+											?>
+							<h3>completed payments</h3>
+							<p><?php echo $total_pending . " "
+														  . "$" ?></p>
+					   </div>
+					   <i class="fa-solid fa-wallet"></i>
+				 </div>
+		    </div>
+	  </div>
 </section>
 <!--end  Main-->
 </body>
-
 </html>

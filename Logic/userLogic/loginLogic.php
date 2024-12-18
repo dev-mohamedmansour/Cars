@@ -2,11 +2,11 @@
 	  
 	  use Cars\Models\DB;
 	  use Cars\Models\UserInter;
-	  
 	  require_once __DIR__ . "/../../vendor/autoload.php";
 	  @session_start();
 	  $dbAction = new DB();
 	  $userClass = new UserInter();
+	  
 	  /**
 		* Validates an email address by checking its format and domain existence.
 		*
@@ -20,6 +20,7 @@
 		*                "Invalid email format." if the format is incorrect,
 		*                or "Domain does not exist." if the domain is not valid.
 		*/
+
 	  function validateEmailAdvanced(string $email): string
 	  {
 			 
@@ -142,10 +143,10 @@
 					}
 					$email = $GLOBALS['email'];
 					$uploadedImageContent = $GLOBALS['uploadedImageContent'];
-					/**********/
 					$idCity = $userClass->checkGovernorateAndCity(
 						 $governorate, $city
 					);
+					
 					if ($idCity == "this city not selected"
 						 || $idCity == "this not governorate"
 					) {

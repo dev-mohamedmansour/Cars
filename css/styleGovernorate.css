@@ -93,7 +93,7 @@
     z-index: 0;
 }
 
-.backgroundImageCars2 {
+.backgroundImageCar2 {
     border-radius: 15px;
     background-image: url("../img/UTCC201721.jpg");
     width: 100%;
@@ -105,7 +105,7 @@
     z-index: 0;
 }
 
-.backgroundImageCars3 {
+.backgroundImageCar3 {
     border-radius: 15px;
     background-image: url("../img/1961-Jaguar-E-Type-Series-1-3-8-Litre-Fixed-Head-Coupe-_63.jpg");
     width: 100%;
@@ -117,7 +117,7 @@
     z-index: 0;
 }
 
-.backgroundImageCars4 {
+.backgroundImageCar4 {
     border-radius: 15px;
     background-image: url("../img/wp88834111.jpg");
     width: 100%;
@@ -129,7 +129,7 @@
     z-index: 0;
 }
 
-.backgroundImageCars5 {
+.backgroundImageCar5 {
     border-radius: 15px;
     background-image: url("../img/OIP1.jpeg");
     width: 100%;
@@ -201,7 +201,7 @@
 }
 
 
-/* rrrr */
+/*  */
 .form {
     display: none;
 }
@@ -214,7 +214,9 @@
     display: block;
     width: 100%;
 }
-
+.mansBackground{
+    background-color: tomato;
+}
 /*.card-update{*/
 /*  background-color: #b2c0b7;*/
 /*}*/

@@ -146,9 +146,9 @@ sup {
  */
 
 img {
-    border-style: none;
-    height: 400px;
-    width: auto;
+    border-style: groove;
+    height: 300px;
+    width: 300px;
     padding: 10px;
     margin: 2px;
 }

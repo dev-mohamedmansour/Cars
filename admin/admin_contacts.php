@@ -1,22 +1,21 @@
 <?php
+	  
+	  use Cars\Models\DB;
+	  
+	  require_once '../vendor/autoload.php';
+	  $dbAction = new DB;
 	  global $connection;
-	  
-	  
-	  session_start();
-	  
-	  $admin_id = $_SESSION['admin_id'];
+	  @session_start();
+	  $admin_id = $_SESSION['adminId'];
 	  
 	  if (!isset($admin_id)) {
-			 header('location:login.php');
+			 header('location:../login.php');
 	  }
 	  
 	  if (isset($_GET['delete'])) {
 			 $delete_id = $_GET['delete'];
-			 mysqli_query(
-				  $connection, "DELETE FROM `contactus` WHERE id = '$delete_id'"
-			 )
-			 or die('query failed');
-			 header('location:admin_contacts.php');
+			$dbAction->delete("contact_us")->where("id","=","$delete_id");
+			 header('location: admin_contacts.php');
 	  }
 
 ?>
@@ -43,38 +42,34 @@
 	  <title>admin_contacts</title>
 </head>
 <body>
-<?php include("header_admin.php");
+<?php include("header_admin.php")?>
 
-?>
 <!-- Start contacts -->
 <div class="contacts">
 	  <div class="container">
 				<?php
-					  $select_message = mysqli_query(
-							$connection, "SELECT * FROM `contactus`"
-					  ) or die('query failed');
-					  if (mysqli_num_rows($select_message) > 0) {
-							 while ($fetch_message = mysqli_fetch_assoc(
-								  $select_message
-							 )) {
+					  $select_message = $dbAction->select("*","contact_us")->getAll();
+					  
+					  if ($select_message > 0) {
+								foreach (	$select_message as $message ) {
 									?>
 					    <div class="box">
 							 <p> client_id :
-								   <span><?php echo $fetch_message['client_id']; ?></span>
+								   <span><?php echo $message['client_id']; ?></span>
 							 </p>
 							 <p> name :
-								   <span><?php echo $fetch_message['name']; ?></span>
+								   <span><?php echo $message['name']; ?></span>
 							 </p>
 							 <p> email :
-								   <span><?php echo $fetch_message['email']; ?></span>
+								   <span><?php echo $message['email']; ?></span>
 							 </p>
 							 <p> subject :
-								   <span><?php echo $fetch_message['subject']; ?></span>
+								   <span><?php echo $message['subject']; ?></span>
 							 </p>
 							 <p> message :
-								   <span><?php echo $fetch_message['message']; ?></span>
+								   <span><?php echo $message['message']; ?></span>
 							 </p>
-							 <a href="admin_contacts.php?delete=<?php echo $fetch_message['id']; ?>"
+							 <a href="admin_contacts.php?delete=<?php echo $message['id']; ?>"
 							    onclick="return confirm('delete this message?');"
 							    class="delete-btn">delete message</a>
 					    </div>
