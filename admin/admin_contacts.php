@@ -9,13 +9,13 @@
 	  $admin_id = $_SESSION['adminId'];
 	  
 	  if (!isset($admin_id)) {
-			 header('location:../login.php');
+				header('location:../login.php');
 	  }
 	  
 	  if (isset($_GET['delete'])) {
 			 $delete_id = $_GET['delete'];
-			$dbAction->delete("contact_us")->where("id","=","$delete_id");
-			 header('location: admin_contacts.php');
+				$dbAction->delete("contact_us")->where("id", "=", "$delete_id");
+				header('location: admin_contacts.php');
 	  }
 
 ?>
@@ -42,16 +42,17 @@
 	  <title>admin_contacts</title>
 </head>
 <body>
-<?php include("header_admin.php")?>
+<?php include("header_admin.php") ?>
 
 <!-- Start contacts -->
 <div class="contacts">
 	  <div class="container">
 				<?php
-					  $select_message = $dbAction->select("*","contact_us")->getAll();
-					  
-					  if ($select_message > 0) {
-								foreach (	$select_message as $message ) {
+								 $select_message = $dbAction->select("*", "contact_us")
+									  ->getAll();
+								 
+								 if ($select_message > 0) {
+										foreach ($select_message as $message) {
 									?>
 					    <div class="box">
 							 <p> client_id :

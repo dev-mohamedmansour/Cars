@@ -275,7 +275,7 @@
       <workItem from="1734442988889" duration="112000" />
       <workItem from="1734443119268" duration="964000" />
       <workItem from="1734446514477" duration="28397000" />
-      <workItem from="1734481668064" duration="9664000" />
+      <workItem from="1734481668064" duration="10190000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <option name="closed" value="true" />
@@ -357,7 +357,15 @@
       <option name="project" value="LOCAL" />
       <updated>1734399668245</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="The project has been completed and there were some updates as I added an image to the main screen when the user enters it appears for 5 seconds and then disappears. I also added the governorate and city in which the car will be delivered to the customer in addition to fixing some security vulnerabilities and increasing the level of security and it is finished. Wait for the next version soon when updating">
+      <option name="closed" value="true" />
+      <created>1734495163062</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1734495163062</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -408,7 +416,8 @@
     <MESSAGE value="some edits" />
     <MESSAGE value="Fix: Correct parameter types and formatting&#10;&#10;Corrects parameter types in function signatures to enforce type hinting.  Removes unnecessary spaces and improves code readability by consistently formatting parameters.  No functional changes are included in this commit." />
     <MESSAGE value="Fix: Standardize parameter documentation spacing in CARS model&#10;&#10;Standardizes the spacing in the PHPDoc `@param` annotations for the `addNewOrder` method.  No logic changes." />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix: Standardize parameter documentation spacing in CARS model&#10;&#10;Standardizes the spacing in the PHPDoc `@param` annotations for the `addNewOrder` method.  No logic changes." />
+    <MESSAGE value="The project has been completed and there were some updates as I added an image to the main screen when the user enters it appears for 5 seconds and then disappears. I also added the governorate and city in which the car will be delivered to the customer in addition to fixing some security vulnerabilities and increasing the level of security and it is finished. Wait for the next version soon when updating" />
+    <option name="LAST_COMMIT_MESSAGE" value="The project has been completed and there were some updates as I added an image to the main screen when the user enters it appears for 5 seconds and then disappears. I also added the governorate and city in which the car will be delivered to the customer in addition to fixing some security vulnerabilities and increasing the level of security and it is finished. Wait for the next version soon when updating" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">

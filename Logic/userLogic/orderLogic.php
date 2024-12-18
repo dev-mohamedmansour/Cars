@@ -141,11 +141,12 @@
 						  }
 						  if ($information['Order_status'] == "completed") {
 								 echo '<form action="" method="post">
-													  <input type="hidden" name="userOrderId" value="'. $information['Order_id'] . '">
+													  <input type="hidden" name="userOrderId" value="'
+									  . $information['Order_id'] . '">
 													  <select name="method">
 													  <option value="" selected disabled>'
-														  . $information['Method_of_pay'] .
-														  '</option>
+									  . $information['Method_of_pay'] .
+									  '</option>
 													  <option value="credit cart">Credit Cart</option>
 													  <option value="PayPal">PayPal</option>
 													  <option value="instaPay">instaPay</option>

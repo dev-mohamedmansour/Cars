@@ -73,14 +73,14 @@
 			  *
 			  * @param array $data1       An array containing category information.
 			  * @param array $data2       An array containing order details such as client_id, car_id, and details.
-			  * @param string $governorate The governorate name for the order.
-			  * @param string $city        The city name for the order.
+			  * @param string  $governorate The governorate name for the order.
+			  * @param string  $city        The city name for the order.
 			  *
 			  * @return string Returns a success message if the order is sent successfully.
 			  *                If the governorate or city is invalid, it returns a message indicating the error.
 			  *                If an order already exists for the given client, car, and city, it returns a message indicating that.
 			  *
-			  * @global object $dbAction The database action object used for executing queries.
+			  * @global object $dbAction    The database action object used for executing queries.
 			  */
 			 public function getCar(array $data1, array $data2,
 				  string $governorate,
@@ -90,7 +90,7 @@
 					$userDetails = new  UserInter();
 					global $dbAction;
 					if (empty($governorate) && empty($city)) {
-								 header("Location: index.php#products");
+						  header("Location: index.php#products");
 					} else {
 						  $checkCityGovernorate
 								= $userDetails->checkGovernorateAndCity(
@@ -161,7 +161,7 @@
 					];
 					
 					return $this->getCar(
-						 $this->data2, $this->data1,  $governorate, $city
+						 $this->data2, $this->data1, $governorate, $city
 					);
 			 }
 			 
@@ -178,7 +178,7 @@
 			  *
 			  * @global object $dbAction The database action object used for executing queries.
 			  */
-			 public function porsche(string $governorate,string $city): string
+			 public function porsche(string $governorate, string $city): string
 			 {
 					global $dbAction;
 					$this->model = 'Porsche';
@@ -215,7 +215,7 @@
 			  *
 			  * @global object $dbAction The database action object used for executing queries.
 			  */
-			 public function jaguar(string $governorate,string $city): string
+			 public function jaguar(string $governorate, string $city): string
 			 {
 					global $dbAction;
 					$this->model = 'Jaguar';
@@ -252,7 +252,7 @@
 			  *
 			  * @global object $dbAction The database action object used for executing queries.
 			  */
-			 public function BMW(string $governorate,string $city): string
+			 public function BMW(string $governorate, string $city): string
 			 {
 					global $dbAction;
 					$this->model = 'BMW';
@@ -289,7 +289,7 @@
 			  *
 			  * @global object $dbAction The database action object used for executing queries.
 			  */
-			 public function volvo(string $governorate,string $city): string
+			 public function volvo(string $governorate, string $city): string
 			 {
 					global $dbAction;
 					$this->model = 'Volvo';
