@@ -111,7 +111,7 @@
     </include_path>
   </component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="CurrentFile" />
+    <option name="selectedTabId" value="ProjectErrors" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
@@ -125,36 +125,36 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Node.js.scriptGovernorate.js.executor": "Run",
-    "PHP Script.UserInter.php.executor": "Run",
-    "PHP Script.loginLogic.php.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "RunOnceActivity.laravel-idea.search-composer-json": "true",
-    "ShowUsagesActions.previewPropertyKey": "true",
-    "full.screen.before.presentation.mode": "false",
-    "git-widget-placeholder": "master",
-    "last_opened_file_path": "C:/wamp64/www/projects/cars/js",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "run.code.analysis.last.selected.profile": "aDefault",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "vcs.patch.to.clipboard": "true",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Node.js.scriptGovernorate.js.executor&quot;: &quot;Run&quot;,
+    &quot;PHP Script.UserInter.php.executor&quot;: &quot;Run&quot;,
+    &quot;PHP Script.loginLogic.php.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.laravel-idea.search-composer-json&quot;: &quot;true&quot;,
+    &quot;ShowUsagesActions.previewPropertyKey&quot;: &quot;true&quot;,
+    &quot;full.screen.before.presentation.mode&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/wamp64/www/projects/cars/js&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;aDefault&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vcs.patch.to.clipboard&quot;: &quot;true&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "ChangesTree.GroupingKeys": [],
-    "GitStage.ChangesTree.GroupingKeys": [
-      "directory",
-      "repository"
+  &quot;keyToStringList&quot;: {
+    &quot;ChangesTree.GroupingKeys&quot;: [],
+    &quot;GitStage.ChangesTree.GroupingKeys&quot;: [
+      &quot;directory&quot;,
+      &quot;repository&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="PsalmProjectConfiguration">
     <option name="selectedConfigurationId" value="79408c37-cc11-4fed-9e32-1625a19e2672" />
   </component>
@@ -275,7 +275,8 @@
       <workItem from="1734442988889" duration="112000" />
       <workItem from="1734443119268" duration="964000" />
       <workItem from="1734446514477" duration="28397000" />
-      <workItem from="1734481668064" duration="10190000" />
+      <workItem from="1734481668064" duration="10267000" />
+      <workItem from="1734495304027" duration="1312000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <option name="closed" value="true" />
@@ -365,7 +366,23 @@
       <option name="project" value="LOCAL" />
       <updated>1734495163062</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Feat: Add delivery location and splash image, fix security vulnerabilities&#10;&#10;Adds governorate and city to the car delivery information. Implements a splash image on the main screen for 5 seconds.  Addresses security vulnerabilities and improves overall security.">
+      <option name="closed" value="true" />
+      <created>1734495218744</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1734495218744</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Fix: Prevent infinite loop in data processing&#10;&#10;Resolves an issue where specific data inputs caused an infinite loop during processing.  Adds a check for the problematic condition and handles it gracefully.">
+      <option name="closed" value="true" />
+      <created>1734495999195</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1734495999195</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -417,7 +434,9 @@
     <MESSAGE value="Fix: Correct parameter types and formatting&#10;&#10;Corrects parameter types in function signatures to enforce type hinting.  Removes unnecessary spaces and improves code readability by consistently formatting parameters.  No functional changes are included in this commit." />
     <MESSAGE value="Fix: Standardize parameter documentation spacing in CARS model&#10;&#10;Standardizes the spacing in the PHPDoc `@param` annotations for the `addNewOrder` method.  No logic changes." />
     <MESSAGE value="The project has been completed and there were some updates as I added an image to the main screen when the user enters it appears for 5 seconds and then disappears. I also added the governorate and city in which the car will be delivered to the customer in addition to fixing some security vulnerabilities and increasing the level of security and it is finished. Wait for the next version soon when updating" />
-    <option name="LAST_COMMIT_MESSAGE" value="The project has been completed and there were some updates as I added an image to the main screen when the user enters it appears for 5 seconds and then disappears. I also added the governorate and city in which the car will be delivered to the customer in addition to fixing some security vulnerabilities and increasing the level of security and it is finished. Wait for the next version soon when updating" />
+    <MESSAGE value="Feat: Add delivery location and splash image, fix security vulnerabilities&#10;&#10;Adds governorate and city to the car delivery information. Implements a splash image on the main screen for 5 seconds.  Addresses security vulnerabilities and improves overall security." />
+    <MESSAGE value="Fix: Prevent infinite loop in data processing&#10;&#10;Resolves an issue where specific data inputs caused an infinite loop during processing.  Adds a check for the problematic condition and handles it gracefully." />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix: Prevent infinite loop in data processing&#10;&#10;Resolves an issue where specific data inputs caused an infinite loop during processing.  Adds a check for the problematic condition and handles it gracefully." />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">

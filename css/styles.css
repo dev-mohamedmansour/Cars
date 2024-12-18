@@ -197,8 +197,8 @@ abbr[title] {
     z-index: 9999;
     overflow: hidden;
     display: flex; /* Ensures proper centering */
-    /*align-items: center;*/
-    /*justify-content: center;*/
+    align-items: center;
+    justify-content: center;
     transition: opacity 0.5s ease-in-out;
 
 }
@@ -211,21 +211,21 @@ abbr[title] {
     left: 0;
     top: 0;
     opacity: 1;
-    z-index: 9998;
+    z-index: 9999;
 }
 
 .loading-area .loading-pic {
     width: 100%;
     position: absolute; /* Adjusted for proper alignment */
     top: 50%;
-    z-index: 9999;
+    z-index: 99999;
     text-align: center;
     transform: translateY(-50%);
 }
 
 .loading-area .loading-pic .loader-gif {
-    width: 100%;
-    height: auto;
+    width: 60%;
+    height: 100%;
     -o-object-fit: cover;
     object-fit: cover;
     -o-object-position: center;

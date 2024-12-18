@@ -2423,7 +2423,7 @@
             setTimeout(() => {
                 loadingArea.style.display = "none"; // Hide after fade-out
             }, 500); // Matches the CSS transition duration
-        }, 5000);
+        }, 3000);
     });
 </script>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
