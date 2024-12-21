@@ -14,7 +14,7 @@
 		  public function __construct()
 		  {
 				 $this->connection = mysqli_connect(
-					  'localhost', 'MohamedMansour', 'MANS362003@@#', 'classic_cars'
+					  'localhost', 'root', '', 'classic_cars'
 				 );
 		  }
 		  

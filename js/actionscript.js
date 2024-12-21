@@ -2,12 +2,12 @@
 const cards = document.querySelectorAll(".hov.col-lg-4.wow.animate__slideInUp.card-update");
 
 // Loop through each card and apply functionality
-cards.forEach((hov) => {
-    const detailsBtn = hov.querySelector(".detailsBtn");
-    const orderBtn = hov.querySelector(".orderBtn");
-    const moveBtn = hov.querySelector(".moveBtn");
-    const details = hov.querySelector(".details");
-    const order = hov.querySelector(".order");
+cards.forEach((zip) => {
+    const detailsBtn = zip.querySelector(".detailsBtn");
+    const orderBtn = zip.querySelector(".orderBtn");
+    const moveBtn = zip.querySelector(".moveBtn");
+    const details = zip.querySelector(".details");
+    const order = zip.querySelector(".order");
 
     detailsBtn.addEventListener("click", () => {
         moveBtn.classList.remove("rightBtn");

@@ -60,9 +60,7 @@
 	  </div>
 </div>
 <!-- LOADING AREA  END ====== -->
-
 <body id="page-top">
-
 <?php
 	  @include 'Logic/userLogic/homeLogic.php';
 	  $clientId = $_SESSION['clientId'];
@@ -71,6 +69,7 @@
 			 header('location: login.php');
 	  }
 ?>
+
 <!-- Navigation-->
 <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top"
 	id="mainNav">
@@ -2413,6 +2412,10 @@
 	  <!-- Copyright -->
 </footer>
 <!-- Footer -->
+<!-- Scroll-to-Top Button -->
+<div class="car-top">
+	  <span><img src="img/car.png" alt="Scroll to top"></span>
+</div>
 <script>
     document.addEventListener("DOMContentLoaded", () => {
         const loadingArea = document.querySelector(".loading-area");
@@ -2424,6 +2427,28 @@
                 loadingArea.style.display = "none"; // Hide after fade-out
             }, 500); // Matches the CSS transition duration
         }, 3000);
+    });
+</script>
+<script>
+    // Scroll-to-Top Functionality
+    document.addEventListener("DOMContentLoaded", function () {
+        var scrollTopBtn = document.querySelector(".car-top");
+
+        scrollTopBtn.addEventListener("click", function () {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+            scrollTopBtn.classList.add("car-run");
+            setTimeout(function () {
+                scrollTopBtn.classList.remove("car-run");
+            }, 1000);
+        });
+
+        window.addEventListener("scroll", function () {
+            if (window.scrollY >= 200) {
+                scrollTopBtn.classList.add("show");
+            } else {
+                scrollTopBtn.classList.remove("show");
+            }
+        });
     });
 </script>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
