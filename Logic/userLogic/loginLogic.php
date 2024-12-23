@@ -2,6 +2,7 @@
 	  
 	  use Cars\Models\DB;
 	  use Cars\Models\UserInter;
+	  
 	  require_once __DIR__ . "/../../vendor/autoload.php";
 	  @session_start();
 	  $dbAction = new DB();
@@ -20,7 +21,7 @@
 		*                "Invalid email format." if the format is incorrect,
 		*                or "Domain does not exist." if the domain is not valid.
 		*/
-
+	  
 	  function validateEmailAdvanced(string $email): string
 	  {
 			 
@@ -67,9 +68,8 @@
 						  header('location:sign_up.php');
 						  echo "<h2 style='color: red'> Invalid email format. </h2>";
 					} else {
-						  $filterEmail = filter_var(
-								$_POST['email'],
-								FILTER_SANITIZE_STRING
+						  $filterEmail = strip_tags(
+								$_POST['email']
 						  );
 						  $GLOBALS['email'] = mysqli_real_escape_string(
 								$dbAction->connection,
@@ -150,8 +150,12 @@
 					if ($idCity == "this city not selected"
 						 || $idCity == "this not governorate"
 					) {
-						  header('location:sign_up.php');
+//						  header('location:sign_up.php');
+						  echo "<pre>";
+						  var_dump($idCity);
+						  echo "</pre>";
 						  echo "<h2 style='color: red'> City or Governorate not selected. </h2>";
+						  die();
 					} else {
 						  $data = [
 								"name"       => $name,
@@ -162,8 +166,17 @@
 								"city_id"    => $idCity,
 								"user_image" => $uploadedImageContent,
 						  ];
-						  $dbAction->insert("users", $data)->execution();
-						  header('location:login.php');
+//						  echo "<pre>";
+//						  var_dump($data);
+//						  echo "</pre>";
+//						  die();
+						  $userInsert = $dbAction->insert("users", $data)->execution(
+						  );
+						  if ($userInsert) {
+                        header('location:login.php');
+                    } else {
+                        header('location:sign_up.php');
+                    }
 					}
 			 }
 	  }

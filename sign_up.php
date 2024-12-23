@@ -102,6 +102,7 @@
 					   <div class="row row2">
 							<div class="col-lg-12">
 													 <?php
+															@session_start();
 															@include 'Logic/userLogic/loginLogic.php' ?>
 								  <form
 									    id="contactForm"
