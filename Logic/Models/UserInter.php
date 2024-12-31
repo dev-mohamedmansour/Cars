@@ -3,6 +3,7 @@
 	  namespace Cars\Models;
 	  
 	  @session_start();
+	  
 	  class UserInter
 	  {
 			 public array $selectOrders;
@@ -68,7 +69,6 @@
 								->getRow();
 						  if (isset($selectGovernorate)) {
 								 $idGovernorate = $selectGovernorate['id'];
-								 
 								 $selectCity = $dbAction->select("id", "cities")
 									  ->where("city_name", " = ", "$city")->andWhere(
 											"governorate_id", "=", "$idGovernorate"
@@ -82,6 +82,7 @@
 										
 								 }
 						  } else {
+								 
 								 header('location:sign_up.php');
 								 return "this not governorate";
 						  }

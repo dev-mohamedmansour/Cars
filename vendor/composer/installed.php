@@ -3,7 +3,7 @@
         'name' => 'vendor_name/cars',
         'pretty_version' => 'dev-master',
         'version' => 'dev-master',
-        'reference' => '8d93284e9e5fc6dd47e290283247349b5fd66018',
+        'reference' => 'f807320106fa07ef2f38eb7001a5081665d8c778',
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -145,7 +145,7 @@
         'vendor_name/cars' => array(
             'pretty_version' => 'dev-master',
             'version' => 'dev-master',
-            'reference' => '8d93284e9e5fc6dd47e290283247349b5fd66018',
+            'reference' => 'f807320106fa07ef2f38eb7001a5081665d8c778',
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),

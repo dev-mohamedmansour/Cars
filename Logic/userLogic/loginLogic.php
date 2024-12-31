@@ -71,56 +71,50 @@
 						  $filterEmail = strip_tags(
 								$_POST['email']
 						  );
-						  $GLOBALS['email'] = mysqli_real_escape_string(
+						  $GLOBALS['email'] = pg_escape_string(
 								$dbAction->connection,
 								$filterEmail
 						  );
 					}
-					$filterName = filter_var(
-						 $_POST['name'],
-						 FILTER_SANITIZE_STRING
+					$filterName = strip_tags(
+						 $_POST['name']
 					);
-					$name = mysqli_real_escape_string(
+					$name = pg_escape_string(
 						 $dbAction->connection,
 						 $filterName
 					);
-					$filterPhone = filter_var(
-						 $_POST['phone'],
-						 FILTER_SANITIZE_STRING
+					$filterPhone = strip_tags(
+						 $_POST['phone']
 					);
-					$phone = mysqli_real_escape_string(
+					$phone = pg_escape_string(
 						 $dbAction->connection,
 						 $filterPhone
 					);
-					$filterGovernorate = filter_var(
-						 $_POST['Governorate'],
-						 FILTER_SANITIZE_STRING
+					$filterGovernorate = strip_tags(
+						 $_POST['Governorate']
 					);
-					$governorate = mysqli_real_escape_string(
+					$governorate = pg_escape_string(
 						 $dbAction->connection,
 						 $filterGovernorate
 					);
-					$filterCity = filter_var(
-						 $_POST['City'],
-						 FILTER_SANITIZE_STRING
+					$filterCity = strip_tags(
+						 $_POST['City']
 					);
-					$city = mysqli_real_escape_string(
+					$city = pg_escape_string(
 						 $dbAction->connection,
 						 $filterCity
 					);
-					$filterGender = filter_var(
-						 $_POST['gender'],
-						 FILTER_SANITIZE_STRING
+					$filterGender = strip_tags(
+						 $_POST['gender']
 					);
-					$gender = mysqli_real_escape_string(
+					$gender = pg_escape_string(
 						 $dbAction->connection,
 						 $filterGender
 					);
-					$filterPassword = filter_var(
-						 $_POST['password'],
-						 FILTER_SANITIZE_STRING
+					$filterPassword = strip_tags(
+						 $_POST['password']
 					);
-					$password = mysqli_real_escape_string(
+					$password = pg_escape_string(
 						 $dbAction->connection,
 						 md5($filterPassword)
 					);
@@ -128,15 +122,10 @@
 						 && $_FILES["Media"]["error"] == 0
 					) {
 						  // Get uploaded image content
-						  $uploadedImage = file_get_contents(
-								$_FILES['Media']['tmp_name']
-						  );
+						  $uploadedImage
+								= $_FILES['Media']['tmp_name'];
 						  $GLOBALS['uploadedImageContent']
-								= file_get_contents(
-								$_FILES['Media']['tmp_name']
-						  );
-						  $GLOBALS['uploadedImageContent']
-								= mysqli_real_escape_string(
+								= pg_escape_bytea(
 								$dbAction->connection,
 								$uploadedImage
 						  );
@@ -150,12 +139,8 @@
 					if ($idCity == "this city not selected"
 						 || $idCity == "this not governorate"
 					) {
-//						  header('location:sign_up.php');
-						  echo "<pre>";
-						  var_dump($idCity);
-						  echo "</pre>";
+						  header('location:sign_up.php');
 						  echo "<h2 style='color: red'> City or Governorate not selected. </h2>";
-						  die();
 					} else {
 						  $data = [
 								"name"       => $name,
@@ -166,19 +151,16 @@
 								"city_id"    => $idCity,
 								"user_image" => $uploadedImageContent,
 						  ];
-//						  echo "<pre>";
-//						  var_dump($data);
-//						  echo "</pre>";
-//						  die();
 						  $userInsert = $dbAction->insert("users", $data)->execution(
 						  );
-						  if ($userInsert) {
-                        header('location:login.php');
-                    } else {
-                        header('location:sign_up.php');
-                    }
+						  if (isset($userInsert)) {
+								 header('location:login.php');
+						  } else {
+								 header('location:sign_up.php');
+						  }
 					}
 			 }
+			 
 	  }
 	  
 	  // login logic
@@ -190,7 +172,7 @@
 						 $_POST['email']
 					);
 					
-					$email = mysqli_real_escape_string(
+					$email = pg_escape_string(
 						 $dbAction->connection,
 						 $filterEmail
 					);
@@ -198,7 +180,7 @@
 					$filterPassword = strip_tags(
 						 $_POST['password']
 					);
-					$password = mysqli_real_escape_string(
+					$password = pg_escape_string(
 						 $dbAction->connection,
 						 md5($filterPassword)
 					);
@@ -211,6 +193,10 @@
 						 "=",
 						 $password
 					)->getRow();
+//					echo "<pre>";
+//					var_dump($selectUser);
+//					echo "</pre>";
+//					die();
 					
 					if ($selectUser['role'] == 'admin') {
 						  $_SESSION['adminName'] = $selectUser['name'];

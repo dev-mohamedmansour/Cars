@@ -2,152 +2,185 @@
 	  
 	  namespace Cars\Models;
 	  
-	  //	 	  require_once __DIR__ . "/../../vendor/autoload.php";
-	  
-	  
 	  class DB
 	  {
 			 public $connection;
 			 public $query;
-			 public $mysqlLine;
+			 public $pgsqlLine;
 			 
+			 // Constructor to connect to PostgreSQL
 			 public function __construct()
 			 {
-					$this->connection = mysqli_connect(
-						 'localhost', 'root', '', 'classic_cars'
+					$this->connection = pg_connect(
+						 "host=localhost dbname=classic_cars port=5432 user=postgres password=2772003"
 					);
 			 }
 			 
+			 // SELECT query
 			 public function select($column, $table)
 			 {
-					$this->mysqlLine = "SELECT $column FROM `$table` ";
-					
+					$this->pgsqlLine = "SELECT $column FROM \"$table\" ";
 					return $this;
 			 }
 			 
+			 // WHERE condition
 			 public function where($column, $compare, $value)
 			 {
-					$this->mysqlLine .= " WHERE  $column $compare '$value' ";
-					
+					$this->pgsqlLine .= " WHERE  \"$column\" $compare '$value' ";
 					return $this;
 			 }
 			 
+			 // ORDER BY descending and LIMIT 1
 			 public function orderBy($column)
 			 {
-					$this->mysqlLine .= " ORDER BY `$column` DESC LIMIT 1 ";
-					
+					$this->pgsqlLine .= " ORDER BY \"$column\" DESC LIMIT 1 ";
 					return $this;
 			 }
 			 
+			 // Custom ORDER BY ascending
 			 public function customOrderBy($column)
 			 {
-					$this->mysqlLine .= " ORDER BY  $column ASC ";
-					
+					$this->pgsqlLine .= " ORDER BY \"$column\" ASC ";
 					return $this;
 			 }
 			 
+			 // GROUP BY and HAVING clause
 			 public function groupBy($table1ColumName, $columName, $value)
 			 {
-					$this->mysqlLine .= " GROUP BY $table1ColumName " . " " .
-						 " HAVING" . " " . "`$columName` =  '$value' ";
-					
+					$this->pgsqlLine .= " GROUP BY \"$table1ColumName\" HAVING \"$columName\" = '$value' ";
 					return $this;
 			 }
 			 
-			 public function rightJoin(
-				  $table2,
-				  $table1ColumnName,
+			 // RIGHT JOIN
+			 public function rightJoin($table2, $table1ColumnName,
 				  $table2ColumnName
 			 ) {
-					$this->mysqlLine .= "RIGHT JOIN `$table2` on $table1ColumnName  = $table2ColumnName ";
-					
+					$this->pgsqlLine .= "RIGHT JOIN \"$table2\" on \"$table1ColumnName\" = \"$table2ColumnName\" ";
 					return $this;
 			 }
 			 
-			 public function innerJoin(
-				  $table,
-				  $table1ColumnName,
-				  $table2ColumnName
+			 // INNER JOIN
+			 public function innerJoin($table, $table1ColumnName, $table2ColumnName
 			 ) {
-					$this->mysqlLine .= "INNER JOIN  `$table` on $table1ColumnName  = $table2ColumnName ";
-					
+					$this->pgsqlLine .= "INNER JOIN \"$table\" on \"$table1ColumnName\" = \"$table2ColumnName\" ";
 					return $this;
 			 }
 			 
+			 // AND WHERE condition
 			 public function andWhere($column, $compare, $value)
 			 {
-					$this->mysqlLine .= "AND `$column` $compare '$value' ";
-					
+					$this->pgsqlLine .= "AND  \"$column\" $compare '$value' ";
 					return $this;
 			 }
 			 
+			 // OR WHERE condition
 			 public function orWhere($column, $compare, $value)
 			 {
-					$this->mysqlLine .= "OR `$column` $compare '$value' ";
-					
+					$this->pgsqlLine .= "OR \"$column\" $compare '$value' ";
 					return $this;
 			 }
 			 
+			 // INSERT statement
 			 public function insert($table, $data)
 			 {
 					$sql = $this->preparData($data);
-					$this->mysqlLine = "INSERT INTO `$table` SET $sql";
-					
+					$this->pgsqlLine = " INSERT INTO \"$table\" $sql";
 					return $this;
 			 }
 			 
 			 public function preparData($data)
 			 {
-					$sql = "";
-					foreach ($data as $key => $values) {
-						  $sql .= " `$key` = " . ((gettype($values) == 'string')
-									 ? " '$values' " : " $values ") . " ,";
-					}
-					$sql = rtrim($sql, ",");
+					$columns = [];
+					$values = [];
 					
+					foreach ($data as $key => $value) {
+						  $columns[] = "\"$key\"";
+						  
+						  if (is_null($value)) {
+								 $values[] = 'NULL';
+						  } elseif (is_string($value)) {
+								 // Escape string values for PostgreSQL
+								 $escapedValue = pg_escape_literal($this->connection, $value);
+								 $values[] = $escapedValue;
+						  } elseif (is_resource($value)) {
+								 // Handle binary data
+								 $escapedValue = pg_escape_bytea($this->connection, stream_get_contents($value));
+								 $values[] = "E'\\x$escapedValue'";
+						  } else {
+								 // Numeric or other non-string values
+								 $values[] = $value;
+						  }
+					}
+					
+					$columnsList = implode(", ", $columns);
+					$valuesList = implode(", ", $values);
+					
+					$sql = "($columnsList) VALUES ($valuesList);";
 					return $sql;
 			 }
+
 			 
+			 
+			 // Prepare data for insert/update
+//			 public function preparData($data)
+//			 {
+//					$sql = "";
+//					foreach ($data as $key => $values) {
+//						  $sql .= " \"$key\" = " . ((gettype($values) == 'string')
+//									 ? " '$values' " : " $values ") . " ,";
+//					}
+//					$sql = rtrim($sql, ",");
+//					return $sql;
+//			 }
+			 
+			 // UPDATE statement
 			 public function update($table, $data)
 			 {
 					$sql = $this->preparData($data);
-					$this->mysqlLine = " UPDATE `$table` SET $sql";
-					
+					$this->pgsqlLine = "UPDATE \"$table\" SET $sql";
 					return $this;
 			 }
 			 
+			 // DELETE statement
 			 public function delete($table)
 			 {
-					$this->mysqlLine = " DELETE FROM `$table`";
-					
+					$this->pgsqlLine = "DELETE  FROM \"$table\"";
 					return $this;
 			 }
 			 
+			 // Get all rows from the query
 			 public function getAll(): array
 			 {
 					$this->runQuery();
-					while ($rows = mysqli_fetch_assoc($this->query)) {
+					while ($rows = pg_fetch_assoc($this->query)) {
 						  $response[] = $rows;
 					}
-					
-					/** @var $response */
 					return $response;
 			 }
 			 
+			 // Execute the query
 			 public function runQuery()
 			 {
-					$this->query = mysqli_query(
-						 $this->connection,
-						 $this->mysqlLine
-					);
+					$this->query = pg_query($this->connection, $this->pgsqlLine);
+					
+//					echo "<pre>";
+//					var_dump($this->pgsqlLine);
+//					echo "</pre>";
+//					die();
+					// Log or output the query for debugging
+					if ($this->query === false) {
+						  $error = pg_last_error($this->connection);
+						  echo "<h2 style='color: red'>Query failed: $error</h2>";
+					}
 					
 					return $this->query;
 			 }
 			 
+			 // Get one row from the query
 			 public function getRow()
 			 {
 					$this->runQuery();
-					$q = mysqli_fetch_assoc($this->query);
+					$q = pg_fetch_assoc($this->query);
 					if ($q == []) {
 						  echo "<h2 style='color: red'>Data Not Found</h2>";
 					} elseif ($q != []) {
@@ -155,19 +188,28 @@
 					}
 			 }
 			 
+			 // Execute the query and return result
 			 public function execution()
 			 {
 					$this->runQuery();
-					if (mysqli_affected_rows($this->connection) > 0) {
+					
+					// Check if query execution was successful
+					if ($this->query === false) {
+						  $error = pg_last_error($this->connection);
+						  return "<h2 style='color: red'>Query failed: $error</h2>";
+					}
+					
+					// Check the number of affected rows
+					if (pg_affected_rows($this->query) > 0) {
 						  return "<h2 style='color: green'>All is Done</h2>";
 					} else {
-						  return "something error";
+						  return "<h2 style='color: orange'>No rows were affected</h2>";
 					}
 			 }
 			 
+			 // Destructor to close the PostgreSQL connection
 			 public function __destruct()
 			 {
-					mysqli_close($this->connection);
+					pg_close($this->connection);
 			 }
-			 
 	  }
