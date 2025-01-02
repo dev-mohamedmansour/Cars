@@ -84,7 +84,7 @@
 			 public function insert($table, $data)
 			 {
 					$sql = $this->preparData($data);
-					$this->pgsqlLine = " INSERT INTO \"$table\" $sql";
+					$this->pgsqlLine = " INSERT INTO \"" . $table . "\" " . $sql;
 					return $this;
 			 }
 			 
@@ -118,20 +118,6 @@
 					$sql = "($columnsList) VALUES ($valuesList);";
 					return $sql;
 			 }
-
-			 
-			 
-			 // Prepare data for insert/update
-//			 public function preparData($data)
-//			 {
-//					$sql = "";
-//					foreach ($data as $key => $values) {
-//						  $sql .= " \"$key\" = " . ((gettype($values) == 'string')
-//									 ? " '$values' " : " $values ") . " ,";
-//					}
-//					$sql = rtrim($sql, ",");
-//					return $sql;
-//			 }
 			 
 			 // UPDATE statement
 			 public function update($table, $data)
