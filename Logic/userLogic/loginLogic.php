@@ -153,6 +153,10 @@
 						  ];
 						  $userInsert = $dbAction->insert("users", $data)->execution(
 						  );
+//						  echo "<pre>";
+//						  var_dump($userInsert);
+//						  echo "</pre>";
+//						  die();
 						  if (isset($userInsert)) {
 								 header('location:login.php');
 						  } else {

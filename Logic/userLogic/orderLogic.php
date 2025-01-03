@@ -117,21 +117,25 @@
 			 $userDetails = new UserInter();
 			 
 			 $userOrders = $userDetails->getOrders();
+//			 echo "<pre>";
+//			 var_dump($userOrders);
+//			 echo "</pre>";
+//			 die();
 			 if ($userOrders > 0) {
 					foreach ($userOrders as $information) {
 						  
 						  echo '<div class="box">';
 						  foreach ($information as $key => $value) {
-								 if ($information['Order_status']
+								 if ($information['order_status']
 									  == "completed"
 								 ) {
 										echo "<p> $key :
 					    		  <span> $value </span>
 				  				  </p>";
-								 } elseif ($information['Order_status']
+								 } elseif ($information['order_status']
 									  == "pending"
 								 ) {
-										if ($key == "Total_price") {
+										if ($key == "total_price") {
 											  continue;
 										}
 										echo "<p> $key :
@@ -139,7 +143,7 @@
 				  				  </p>";
 								 }
 						  }
-						  if ($information['Order_status'] == "completed") {
+						  if ($information['order_status'] == "completed") {
 								 echo '<form action="" method="post">
 													  <input type="hidden" name="userOrderId" value="'
 									  . $information['Order_id'] . '">

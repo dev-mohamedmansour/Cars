@@ -26,28 +26,28 @@
 			 // WHERE condition
 			 public function where($column, $compare, $value)
 			 {
-					$this->pgsqlLine .= " WHERE  \"$column\" $compare '$value' ";
+					$this->pgsqlLine .= " WHERE  $column $compare  '$value' ";
 					return $this;
 			 }
 			 
 			 // ORDER BY descending and LIMIT 1
 			 public function orderBy($column)
 			 {
-					$this->pgsqlLine .= " ORDER BY \"$column\" DESC LIMIT 1 ";
+					$this->pgsqlLine .= " ORDER BY $column DESC LIMIT 1 ";
 					return $this;
 			 }
 			 
 			 // Custom ORDER BY ascending
 			 public function customOrderBy($column)
 			 {
-					$this->pgsqlLine .= " ORDER BY \"$column\" ASC ";
+					$this->pgsqlLine .= " ORDER BY $column ASC ";
 					return $this;
 			 }
 			 
 			 // GROUP BY and HAVING clause
 			 public function groupBy($table1ColumName, $columName, $value)
 			 {
-					$this->pgsqlLine .= " GROUP BY \"$table1ColumName\" HAVING \"$columName\" = '$value' ";
+					$this->pgsqlLine .= " GROUP BY $table1ColumName HAVING $columName = '$value' ";
 					return $this;
 			 }
 			 
@@ -55,28 +55,28 @@
 			 public function rightJoin($table2, $table1ColumnName,
 				  $table2ColumnName
 			 ) {
-					$this->pgsqlLine .= "RIGHT JOIN \"$table2\" on \"$table1ColumnName\" = \"$table2ColumnName\" ";
+					$this->pgsqlLine .= "RIGHT JOIN \"$table2\" on $table1ColumnName = $table2ColumnName ";
 					return $this;
 			 }
 			 
 			 // INNER JOIN
 			 public function innerJoin($table, $table1ColumnName, $table2ColumnName
 			 ) {
-					$this->pgsqlLine .= "INNER JOIN \"$table\" on \"$table1ColumnName\" = \"$table2ColumnName\" ";
+					$this->pgsqlLine .= "INNER JOIN \"$table\" on  $table1ColumnName = $table2ColumnName ";
 					return $this;
 			 }
 			 
 			 // AND WHERE condition
 			 public function andWhere($column, $compare, $value)
 			 {
-					$this->pgsqlLine .= "AND  \"$column\" $compare '$value' ";
+					$this->pgsqlLine .= "AND  $column $compare '$value' ";
 					return $this;
 			 }
 			 
 			 // OR WHERE condition
 			 public function orWhere($column, $compare, $value)
 			 {
-					$this->pgsqlLine .= "OR \"$column\" $compare '$value' ";
+					$this->pgsqlLine .= "OR  $column $compare '$value' ";
 					return $this;
 			 }
 			 

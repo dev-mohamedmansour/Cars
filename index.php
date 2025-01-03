@@ -50,6 +50,14 @@
 	  <link href="css/styles.css"
 		   rel="stylesheet"/>
 </head>
+<?php
+	  @include 'Logic/userLogic/homeLogic.php';
+	  $clientId = $_SESSION['clientId'];
+	  // if not user redirect to login page
+	  if (!isset($clientId)) {
+			 header('location: login.php');
+	  }
+?>
 <!-- LOADING AREA START ===== -->
 <div class="loading-area">
 	  <div class="loading-box"></div>
@@ -60,14 +68,6 @@
 </div>
 <!-- LOADING AREA  END ====== -->
 <body id="page-top">
-<?php
-	  @include 'Logic/userLogic/homeLogic.php';
-	  $clientId = $_SESSION['clientId'];
-	  // if not user redirect to login page
-	  if (!isset($clientId)) {
-			 header('location: login.php');
-	  }
-?>
 
 <!-- Navigation-->
 <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top"

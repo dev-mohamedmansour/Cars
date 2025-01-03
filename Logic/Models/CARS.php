@@ -107,20 +107,23 @@
 								 $this->data2["city_id"] = $checkCityGovernorate;
 								 $this->orderItem = $dbAction->select("*", "orders")
 									  ->where(
-											"client_id", "=", $this->data2['clientId']
+											"client_id", "=", (string)$this->data2['client_id']
 									  )->andWhere(
 											"car_id", "=", $this->data2['car_id']
 									  )->andWhere(
 											"city_id", "=", $this->data2['city_id']
-									  )
-									  ->getRow();
-								 
+									  )->getRow();
+
 								 if ($this->orderItem > 0) {
 										echo "<h1 style='color: #0dcaf0'>orderPages already exist!</h1>";
 								 } else {
 										$this->addOrder = $dbAction->insert(
 											 "orders", $this->data2
 										)->execution();
+//										echo "<pre>";
+//										var_dump($this->addOrder);
+//										echo "</pre>";
+//										die();
 										header("Location: orderPages/orderDetails.php");
 										return 'order send successfully!';
 								 }
@@ -297,15 +300,18 @@
 					$this->verfyCar = $dbAction->select("*", "cars")->where(
 						 "name_car", "=", "$this->model"
 					)->getRow();
-					$this->data1 = [
-						 
-						 "category_id" => $this->verfyCar['category_id'],
-					];
+//					echo "<pre>";
+//					var_dump($this->verfyCar);
+//					echo "</pre>";
+//					die();
+					
+					
+					$this->data1 = ["category_id" => $this->verfyCar['category_id'],];
 					$this->data2 = [
 						 
-						 "client_id" => $_SESSION['clientId'],
-						 "car_id"    => $this->verfyCar['id'],
-						 "details"   => $_POST['volvo'],
+						 "client_id" =>  (string)$_SESSION['clientId'],
+						 "car_id"    => (string)$this->verfyCar['id'],
+						 "details"   => (string)$_POST['volvo'],
 					];
 					
 					return $this->getCar(

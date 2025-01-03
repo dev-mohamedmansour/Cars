@@ -106,9 +106,7 @@
 															@include 'Logic/userLogic/loginLogic.php' ?>
 								  <form
 									    id="contactForm"
-									    novalidate=""
 									    method="post"
-									    action=""
 									    enctype="multipart/form-data">
 									    <div class="row row2">
 
