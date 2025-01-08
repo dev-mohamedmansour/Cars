@@ -85,7 +85,7 @@
 				 </div>
 		    </div>
 		    <div class="box-info">
-				 <div style="background: linear-gradient(45deg, #8e44ad, #eb8192)"
+				 <div style="background: linear-gradient(45deg, #0dcaf0, #0d6efd)"
 					 class="box-info-sigle">
 					   <div class="info-text">
 											<?php
@@ -96,34 +96,51 @@
 												  )->where(
 														"payment_status", "=", "completed"
 												  )->getAll();
+												  
 												  if ($select_completed > 0) {
-														 foreach (
-															  $select_completed as
-															  $fetch_completed
-														 ) {
-																$total_price
-																	 = $fetch_completed['total_price'];
-																$total_completed += $total_price;
-														 };
-												  };
+														 
+														 if ($select_completed['0'] == 0) {
+																$total_completed = 0;
+														 } else {
+																foreach (
+																	 $select_completed as
+																	 $fetch_completed
+																) {
+																	  $total_price
+																			= $fetch_completed['total_price'];
+																	  $total_completed += $total_price;
+																};
+														 }
+												  }
 											?>
 							<h3>completed payments</h3>
 							<p><?php echo $total_completed . " "
-														  . "$" ?></p>
+														  . "$"; ?></p>
 					   </div>
 					   <i class="fa-solid fa-wallet"></i>
 				 </div>
-				 <div style="background: linear-gradient(45deg, #8e44ad, #eb8192)"
+				 <div style="background: linear-gradient(45deg, #0dcaf0, #0d6efd)"
 					 class="box-info-sigle">
 					   <div class="info-text">
 											<?php
 												  $select_orders = $dbAction->select(
-														"COUNT(*)", "orders"
+														"COUNT(id)", "orders"
 												  )->getAll();
-												  foreach ($select_orders as $fetch_orders)
-												  {
-														 $number_of_orders
-															  = $fetch_orders['COUNT(*)'];
+												  
+												  if ($select_orders > 0) {
+														 if ($select_orders['0'] == 0) {
+																$number_of_orders = 0;
+														 } else {
+																
+																foreach (
+																	 $select_orders
+																	 as
+																	 $fetch_orders
+																) {
+																	  $number_of_orders
+																			= $fetch_orders['count'];
+																}
+														 }
 												  }
 												  global $number_of_orders;
 											?>
@@ -133,16 +150,27 @@
 					   </div>
 					   <i class="fa-solid fa-wallet"></i>
 				 </div>
-				 <div style="background: linear-gradient(45deg, #8e44ad, #eb8192)"
+				 <div style="background: linear-gradient(45deg, #0dcaf0, #0d6efd)"
 					 class="box-info-sigle">
 					   <div class="info-text">
 											<?php
 												  $select_cars = $dbAction->select(
-														"COUNT(*)", "cars"
+														"COUNT(id)", "cars"
 												  )->getAll();
-												  foreach ($select_cars as $fetch_cars) {
-														 $number_of_cars
-															  = $fetch_cars['COUNT(*)'];
+												  if ($select_cars > 0) {
+														 if ($select_cars['0'] == 0) {
+																$number_of_cars = 0;
+														 } else {
+																
+																foreach (
+																	 $select_cars
+																	 as
+																	 $fetch_cars
+																) {
+																	  $number_of_cars
+																			= $fetch_cars['count'];
+																}
+														 }
 												  }
 												  global $number_of_cars;
 											?>
@@ -152,16 +180,27 @@
 					   </div>
 					   <i class="fa-solid fa-wallet"></i>
 				 </div>
-				 <div style="background: linear-gradient(45deg, #8e44ad, #eb8192)"
+				 <div style="background: linear-gradient(45deg, #0dcaf0, #0d6efd)"
 					 class="box-info-sigle">
 					   <div class="info-text">
 											<?php
 												  $select_users = $dbAction->select(
-														"COUNT(*)", "users"
+														"COUNT(id)", "users"
 												  )->where("role", "=", "user")->getAll();
-												  foreach ($select_users as $fetch_users) {
-														 $number_of_users
-															  = $fetch_users['COUNT(*)'];
+												  if ($select_users > 0) {
+														 if ($select_users['0'] == 0) {
+																$number_of_users = 0;
+														 } else {
+																
+																foreach (
+																	 $select_users
+																	 as
+																	 $fetch_users
+																) {
+																	  $number_of_users
+																			= $fetch_users['count'];
+																}
+														 }
 												  }
 												  global $number_of_users;
 											?>
@@ -171,18 +210,26 @@
 					   </div>
 					   <i class="fa-solid fa-wallet"></i>
 				 </div>
-				 <div style="background: linear-gradient(45deg, #8e44ad, #eb8192)"
+				 <div style="background: linear-gradient(45deg, #0dcaf0, #0d6efd)"
 					 class="box-info-sigle">
 					   <div class="info-text">
 											<?php
 												  $select_contact = $dbAction->select(
-														"COUNT(*)", "contact_us"
+														"COUNT(id)", "contact_us"
 												  )->getAll();
-												  foreach (
-														$select_contact as $fetch_contact
-												  ) {
-														 $number_of_contact
-															  = $fetch_contact['COUNT(*)'];
+												  if ($select_contact > 0) {
+														 if ($select_contact['0'] == 0) {
+																$number_of_contact = 0;
+														 } else {
+																
+																foreach (
+																	 $select_contact as
+																	 $fetch_contact
+																) {
+																	  $number_of_contact
+																			= $fetch_contact['count'];
+																}
+														 }
 												  }
 												  global $number_of_contact;
 											?>
@@ -193,7 +240,7 @@
 					   <i class="fa-solid fa-wallet"></i>
 				 </div>
 
-				 <div style="background: linear-gradient(45deg, #8e44ad, #eb8192)"
+				 <div style="background: linear-gradient(45deg, #0dcaf0, #0d6efd)"
 					 class="box-info-sigle">
 					   <div class="info-text">
 											<?php
@@ -205,17 +252,22 @@
 														"payment_status", "=", "pending"
 												  )->getAll();
 												  if ($select_pending > 0) {
-														 foreach (
-															  $select_pending as
-															  $fetch_pending
-														 ) {
-																$total_price_pending
-																	 = $fetch_pending['total_price'];
-																$total_pending += $total_price_pending;
-														 };
-												  };
+														 if ($select_pending['0'] == 0) {
+																$total_pending = 0;
+														 } else {
+																foreach (
+																	 $select_pending
+																	 as
+																	 $fetch_pending
+																) {
+																	  $total_price_pending
+																			= $fetch_pending['total_price'];
+																	  $total_pending += $total_price_pending;
+																}
+														 }
+												  }
 											?>
-							<h3>completed payments</h3>
+							<h3>pending payments</h3>
 							<p><?php echo $total_pending . " "
 														  . "$" ?></p>
 					   </div>

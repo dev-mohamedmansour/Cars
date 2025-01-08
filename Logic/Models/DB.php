@@ -100,11 +100,15 @@
 								 $values[] = 'NULL';
 						  } elseif (is_string($value)) {
 								 // Escape string values for PostgreSQL
-								 $escapedValue = pg_escape_literal($this->connection, $value);
+								 $escapedValue = pg_escape_literal(
+									  $this->connection, $value
+								 );
 								 $values[] = $escapedValue;
 						  } elseif (is_resource($value)) {
 								 // Handle binary data
-								 $escapedValue = pg_escape_bytea($this->connection, stream_get_contents($value));
+								 $escapedValue = pg_escape_bytea(
+									  $this->connection, stream_get_contents($value)
+								 );
 								 $values[] = "E'\\x$escapedValue'";
 						  } else {
 								 // Numeric or other non-string values
@@ -141,14 +145,18 @@
 					while ($rows = pg_fetch_assoc($this->query)) {
 						  $response[] = $rows;
 					}
-					return $response;
+					if (empty($response)) {
+						  return [0];
+					} else {
+						  return $response;
+					}
 			 }
 			 
 			 // Execute the query
 			 public function runQuery()
 			 {
 					$this->query = pg_query($this->connection, $this->pgsqlLine);
-					
+
 //					echo "<pre>";
 //					var_dump($this->pgsqlLine);
 //					echo "</pre>";
