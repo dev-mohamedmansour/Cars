@@ -12,7 +12,8 @@
   "require": {
     "ext-mysqli": "*",
     "free2one/php-accessor": "~0.5.3",
-    "ext-pgsql": "*"
+    "ext-pgsql": "*",
+    "ext-fileinfo": "*"
   },
   "autoload": {
     "psr-4": {

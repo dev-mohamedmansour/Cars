@@ -27,8 +27,8 @@
 <!-- Start header -->
 <?php
 	  session_start();
-	  $adminId = $_SESSION['adminId'];
-	  if (!isset($adminId)) {
+	  $admin_id = $_SESSION['adminId'];
+	  if (!isset($admin_id)) {
 			 header('location:../login.php');
 	  }
 	  

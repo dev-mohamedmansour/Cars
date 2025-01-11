@@ -118,18 +118,19 @@
 						 $dbAction->connection,
 						 md5($filterPassword)
 					);
-					if (isset($_FILES["Media"])
-						 && $_FILES["Media"]["error"] == 0
-					) {
-						  // Get uploaded image content
-						  $uploadedImage
-								= $_FILES['Media']['tmp_name'];
-						  $GLOBALS['uploadedImageContent']
-								= pg_escape_bytea(
+					if (isset($_FILES["Media"]) && $_FILES["Media"]["error"] == 0) {
+						  // Read the contents of the uploaded image
+						  $uploadedImageContent = file_get_contents(
+								$_FILES['Media']['tmp_name']
+						  );
+						  
+						  // Escape the binary data for safe storage in PostgreSQL
+						  $GLOBALS['uploadedImageContent'] = pg_escape_bytea(
 								$dbAction->connection,
-								$uploadedImage
+								$uploadedImageContent
 						  );
 					}
+					
 					$email = $GLOBALS['email'];
 					$uploadedImageContent = $GLOBALS['uploadedImageContent'];
 					$idCity = $userClass->checkGovernorateAndCity(

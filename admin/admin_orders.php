@@ -39,12 +39,11 @@
 	 global $connection;
 	 
 	 session_start();
-	 
-	 $admin_id = $_SESSION[ 'adminId' ];
-	 
-	 if (!isset($admin_id)) {
-		  header('location:../login.php');
-	 }
+	  
+	  $admin_id = $_SESSION['adminId'];
+	  if (!isset($admin_id)) {
+			 header('location:../login.php');
+	  }
 	 include("header_admin.php");
 
 ?>

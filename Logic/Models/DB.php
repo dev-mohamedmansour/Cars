@@ -26,7 +26,8 @@
 			 // WHERE condition
 			 public function where($column, $compare, $value)
 			 {
-					$this->pgsqlLine .= " WHERE  $column $compare  '$value' ";
+					$this->pgsqlLine = str_replace(";", "", $this->pgsqlLine). " WHERE  $column $compare  '$value' ";
+//					$this->pgsqlLine .= " WHERE  $column $compare  '$value' ";
 					return $this;
 			 }
 			 
@@ -123,11 +124,22 @@
 					return $sql;
 			 }
 			 
+			 // After update function
+			 public function afterUpdate($sql)
+			 {
+					$serch = ["(", ")"];
+					$removeAdds = str_replace($serch, "", $sql);
+					$word ="VALUES";
+					$updateSql = str_replace($word,"=",$removeAdds);
+					return $updateSql;
+			 }
+			 
 			 // UPDATE statement
 			 public function update($table, $data)
 			 {
 					$sql = $this->preparData($data);
-					$this->pgsqlLine = "UPDATE \"$table\" SET $sql";
+					$newSql = $this->afterUpdate($sql);
+					$this->pgsqlLine = "UPDATE \"" . $table . "\"  SET " . $newSql;
 					return $this;
 			 }
 			 
@@ -202,8 +214,8 @@
 			 }
 			 
 			 // Destructor to close the PostgreSQL connection
-			 public function __destruct()
-			 {
-					pg_close($this->connection);
-			 }
+//			 public function __destruct()
+//			 {
+//					pg_close($this->connection);
+//			 }
 	  }

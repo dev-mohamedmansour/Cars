@@ -7,12 +7,12 @@
 	  global $connection;
 	  @session_start();
 	  $admin_id = $_SESSION['adminId'];
-	  
 	  if (!isset($admin_id)) {
-				header('location:../login.php');
+			 header('location:../login.php');
 	  }
 	  
-	  if (isset($_GET['delete'])) {
+	  if (isset($_GET['delete']))
+	  {
 			 $delete_id = $_GET['delete'];
 				$dbAction->delete("contact_us")->where("id", "=", "$delete_id");
 				header('location: admin_contacts.php');

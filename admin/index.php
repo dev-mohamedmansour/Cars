@@ -61,7 +61,7 @@
 		    <h3>Admin Page</h3>
 		    <a class="sidebar-active" href="index.php"><i
 					   class="fa-solid fa-house">Dashboard</i></a>
-		    <a href="admin_users.php"><i
+		    <a href="admin/admin_users.php"><i
 					   class="fa-solid fa-house"></i>User</a>
 		    <a href="admin_orders.php"><i class="fa-solid fa-house"></i>Orders</a>
 		    <a href="admin_contacts.php"><i class="fa-solid fa-house"></i>Contacts</a>

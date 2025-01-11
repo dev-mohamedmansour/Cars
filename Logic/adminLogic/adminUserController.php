@@ -19,14 +19,14 @@
 						  echo '<div class="box">';
 						  foreach ($information as $key => $value) {
 								 if ($key == "user_image") {
-										
+										$binaryData = pg_unescape_bytea($value);
+										$base64Image = base64_encode($binaryData);
 										echo "<p>User Image:
-       									 <span>" .
+                    <span>" .
 											 '<img src="data:image/jpeg;base64,'
-											 . base64_encode($value)
-											 . '" alt="Uploaded Image">' .
+											 . $base64Image . '" alt="Uploaded Image">' .
 											 "</span>
-      									  </p>";
+                </p>";
 								 } elseif ($key == "password") {
 										$value = "*********";
 										echo "<p> Password :
@@ -38,9 +38,9 @@
 											  </p>";
 								 }
 						  }
-						  echo "<a href = " . "admin_users.php?delete="
-								. $information["id"] .
-								"class=" . "delete-btn" . ">Delete User </a>";
+						  echo '<a href="admin_users.php?delete=' . $information["id"]
+								. '" class="delete-btn">Delete User</a>';
+						  
 						  echo '</div>';
 					}
 			 }
