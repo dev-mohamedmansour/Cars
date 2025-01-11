@@ -117,10 +117,7 @@
 			 $userDetails = new UserInter();
 			 
 			 $userOrders = $userDetails->getOrders();
-//			 echo "<pre>";
-//			 var_dump($userOrders);
-//			 echo "</pre>";
-//			 die();
+
 			 if ($userOrders > 0) {
 					foreach ($userOrders as $information) {
 						  

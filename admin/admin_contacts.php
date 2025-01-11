@@ -11,12 +11,12 @@
 			 header('location:../login.php');
 	  }
 	  
-	  if (isset($_GET['delete']))
-	  {
-			 $delete_id = $_GET['delete'];
-				$dbAction->delete("contact_us")->where("id", "=", "$delete_id");
-				header('location: admin_contacts.php');
-	  }
+	  //	  if (isset($_GET['delete']))
+	  //	  {
+	  //			 $delete_id = $_GET['delete'];
+	  //				$dbAction->delete("contact_us")->where("id", "=", "$delete_id");
+	  //				header('location: admin_contacts.php');
+	  //	  }
 
 ?>
 <!DOCTYPE html>
@@ -49,40 +49,13 @@
 
 <!-- Start contacts -->
 <div class="contacts">
+	  <h1 class="title">MESSAGES</h1>
 	  <div class="container">
 				<?php
-								 $select_message = $dbAction->select("*", "contact_us")
-									  ->getAll();
-								 
-								 if ($select_message > 0) {
-										foreach ($select_message as $message) {
-									?>
-					    <div class="box">
-							 <p> client_id :
-								   <span><?php echo $message['client_id']; ?></span>
-							 </p>
-							 <p> name :
-								   <span><?php echo $message['name']; ?></span>
-							 </p>
-							 <p> email :
-								   <span><?php echo $message['email']; ?></span>
-							 </p>
-							 <p> subject :
-								   <span><?php echo $message['subject']; ?></span>
-							 </p>
-							 <p> message :
-								   <span><?php echo $message['message']; ?></span>
-							 </p>
-							 <a href="admin_contacts.php?delete=<?php echo $message['id']; ?>"
-							    onclick="return confirm('delete this message?');"
-							    class="delete-btn">delete message</a>
-					    </div>
-									<?php
-							 }
-					  } else {
-							 echo '<p class="empty">you have no messages!</p>';
-					  }
+					  include '../Logic/adminLogic/adminContactsController.php';
+					  showContacts();
 				?>
+				
 	  </div>
 </div>
 <!-- End contacts -->

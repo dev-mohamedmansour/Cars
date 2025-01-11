@@ -120,10 +120,6 @@
 										$this->addOrder = $dbAction->insert(
 											 "orders", $this->data2
 										)->execution();
-//										echo "<pre>";
-//										var_dump($this->addOrder);
-//										echo "</pre>";
-//										die();
 										header("Location: orderPages/orderDetails.php");
 										return 'order send successfully!';
 								 }
