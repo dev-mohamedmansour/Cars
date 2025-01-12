@@ -120,10 +120,19 @@
 												  $select_orders = $dbAction->select(
 														"COUNT(*)", "orders"
 												  )->getAll();
-												  foreach ($select_orders as $fetch_orders)
-												  {
-														 $number_of_orders
-															  = $fetch_orders['COUNT(*)'];
+												  if ($select_orders > 0) {
+														 if ($select_orders['0'] == 0) {
+																$number_of_orders = 0;
+														 } else {
+																foreach (
+																	 $select_orders
+																	 as
+																	 $fetch_orders
+																) {
+																	  $number_of_orders
+																			= $fetch_orders['COUNT(*)'];
+																}
+														 }
 												  }
 												  global $number_of_orders;
 											?>
