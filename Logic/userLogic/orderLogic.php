@@ -119,8 +119,9 @@
 			 $userOrders = $userDetails->getOrders();
 
 			 if ($userOrders > 0) {
+					echo true;
+					die();
 					foreach ($userOrders as $information) {
-						  
 						  echo '<div class="box">';
 						  foreach ($information as $key => $value) {
 								 if ($information['order_status']

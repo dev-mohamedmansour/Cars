@@ -63,8 +63,8 @@
 					   class="fa-solid fa-house">Dashboard</i></a>
 		    <a href="admin/admin_users.php"><i
 					   class="fa-solid fa-house"></i>User</a>
-		    <a href="admin_orders.php"><i class="fa-solid fa-house"></i>Orders</a>
-		    <a href="admin_contacts.php"><i class="fa-solid fa-house"></i>Contacts</a>
+		    <a href="admin/admin_orders.php"><i class="fa-solid fa-house"></i>Orders</a>
+		    <a href="admin/admin_contacts.php"><i class="fa-solid fa-house"></i>Contacts</a>
 		    <br/>
 		    <div class="separator"></div>
 		    <h3>User Page </h3>

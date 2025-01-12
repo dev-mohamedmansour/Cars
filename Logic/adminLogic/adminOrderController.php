@@ -49,16 +49,19 @@
 			 $dbAction = new DB();
 			 $usersOrders = $dbAction->select('*', 'orders')->getAll();
 			 if ($usersOrders > 0) {
-					foreach ($usersOrders as $information) {
-						  echo '<div class="box">';
-						  foreach ($information as $key => $value) {
-								 echo "<p> $key :
+					if ($usersOrders['0'] == 0) {
+						  echo "<h1><center>"."No Orders "."</center></h1>";
+					} else {
+						  foreach ($usersOrders as $information) {
+								 echo '<div class="box">';
+								 foreach ($information as $key => $value) {
+										echo "<p> $key :
 					    		  <span> $value </span>
 				  				  </p>";
-						  }
-						  echo '<form action="" method="post">
+								 }
+								 echo '<form action="" method="post">
         						  <input type="hidden" name="orderId" value="'
-								. $information['id'] . '">
+									  . $information['id'] . '">
         						  <p>
         						  <input type="text" name="lastPrice" id="card-success" class="form-group" placeholder="Enter A Total Price">
         						  <input type="submit" value="updatePrice" name="updatePrice" class="form-control">
@@ -66,21 +69,23 @@
         						  <p>
              				  <select name="payment_status">
             				  <option value="" selected disabled>'
-								. $information['payment_status'] .
-								'</option>
+									  . $information['payment_status'] .
+									  '</option>
             				  <option value="pending">pending</option>
              				  <option value="completed">completed</option>
                           </select>
          					  <input type="submit" value="Update" name="updateOrder" class="option-btn">
          					  '
-								.
-								'<a href="admin_orders.php?delete=' . $information["id"]
-								. '" class="delete-btn">Delete Order</a>'
-								. "</p>" .
-								'</form>';
-						  
-						  echo '</div>';
-						  
+									  .
+									  '<a href="admin_orders.php?delete='
+									  . $information["id"]
+									  . '" class="delete-btn">Delete Order</a>'
+									  . "</p>" .
+									  '</form>';
+								 
+								 echo '</div>';
+								 
+						  }
 					}
 			 } else {
 					echo '<p class="empty">no orders placed yet!</p>';

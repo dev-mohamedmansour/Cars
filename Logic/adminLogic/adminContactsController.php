@@ -15,17 +15,21 @@
 			 $dbAction = new DB;
 			 $contacts = $dbAction->select('*', 'contact_us')->getAll();
 			 if ($contacts > 0) {
-					foreach ($contacts as $information) {
-						  echo '<div class="box">';
-						  foreach ($information as $key => $value) {
-								 echo "<p> $key :
+					if ($contacts['0'] == 0) {
+						  echo "<h1><center>"."No Messages "."</center></h1>";
+					} else {
+						  foreach ($contacts as $information) {
+								 echo '<div class="box">';
+								 foreach ($information as $key => $value) {
+										echo "<p> $key :
 													 <span> $value </span>
 											  </p>";
+								 }
+								 echo '<a href="admin_contacts.php?delete='
+									  . $information["id"]
+									  . '" class="delete-btn">Delete Message</a>';
+								 echo '</div>';
 						  }
-						  echo '<a href="admin_contacts.php?delete='
-								. $information["id"]
-								. '" class="delete-btn">Delete Message</a>';
-						  echo '</div>';
 					}
 			 }
 	  }
